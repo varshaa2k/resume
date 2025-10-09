@@ -6,7 +6,7 @@ html {
 /* Overall page styling */
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: #f1f5f9;  /* Light pleasant background color */
+    background: #f1f5f9;
     color: #333;          
     margin: 0;
     padding: 0;
@@ -24,6 +24,7 @@ body {
     color: #fff;
     padding-top: 20px;
     z-index: 1000;
+    transition: 0.3s;
 }
 
 .sidebar a {
@@ -44,16 +45,18 @@ body {
 .main-content {
     margin-left: 240px;
     padding: 40px;
+    transition: 0.3s;
 }
 
 /* Hero Section */
 .hero {
-    height: 100vh;
+    min-height: 60vh;
     color: #433f4a;
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
+    padding: 40px 20px;
 }
 
 .hero h1 {
@@ -163,4 +166,61 @@ footer a {
 
 footer a:hover {
     color: #0056b3;
+}
+
+/* ======================= */
+/* Responsive Adjustments */
+/* ======================= */
+
+/* Sidebar toggle for mobile */
+@media (max-width: 768px) {
+    .sidebar {
+        width: 200px;
+        left: -200px;
+        height: 100%;
+    }
+
+    .sidebar.active {
+        left: 0;
+    }
+
+    .main-content {
+        margin-left: 0;
+        padding: 20px;
+    }
+
+    .timeline::before {
+        left: 8px;
+    }
+
+    .timeline-item {
+        width: 100%;
+        left: 0 !important;
+        text-align: left !important;
+        padding-left: 30px;
+        margin-bottom: 20px;
+    }
+
+    .hero h1 {
+        font-size: 2rem;
+    }
+
+    .hero p {
+        font-size: 1rem;
+    }
+}
+
+/* Small devices */
+@media (max-width: 576px) {
+    .hero h1 {
+        font-size: 1.5rem;
+    }
+
+    .hero p {
+        font-size: 0.9rem;
+    }
+
+    section {
+        padding: 50px 10px;
+    }
 }

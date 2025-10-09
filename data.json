@@ -82,15 +82,15 @@
   ],
   "education": [
     {
+      "degree": "Master of Technology in Artificial Intelligence",
+      "university": "SRM University",
+      "year": "2024 - 2026"
+    },
+    {
       "degree": "Bachelor of Engineering in Electronics and communication",
       "university": "Anna University - Prince Shri Venkateshwara Padmavathy Engineering College",
       "year": "2020 - 2024",
       "grade": "8.5 CGPA"
-    },
-    {
-      "degree": "Master of Technology in Artificial Intelligence",
-      "university": "SRM University",
-      "year": "2024 - 2026"
     }
   ],
   "experience": {

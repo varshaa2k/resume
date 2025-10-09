@@ -14,8 +14,13 @@
 </head>
 <body>
 
+<!-- Mobile menu button -->
+<button class="btn btn-primary d-md-none" id="menu-toggle" style="position: fixed; top: 10px; left: 10px; z-index: 1100;">
+    <i class="fas fa-bars"></i> Menu
+</button>
+
 <!-- Sidebar Navigation -->
-<div class="sidebar">
+<div class="sidebar" id="sidebar">
     <a href="#home"><i class="fas fa-home"></i> Home</a>
     <a href="#about"><i class="fas fa-user"></i> About</a>
     <a href="#experience"><i class="fas fa-briefcase me-2"></i> Experience</a>
@@ -26,15 +31,15 @@
 </div>
 
 <!-- Main Content -->
-<div class="main-content">
+<div class="main-content" id="main-content">
 
     <!-- Hero Section -->
-    <section id="home" class="hero">
+    <section id="home" class="hero text-center">
         <div>
             <h1 id="hero-name"></h1>
             <p id="hero-icons">💻 ☕️ 🧠 ❤️</p>
             <p id="hero-desc"></p>
-            <a href="#contact" class="btn btn-custom btn-lg">Contact Me</a>
+            <a href="#contact" class="btn btn-custom btn-lg mt-3">Contact Me</a>
         </div>
     </section>
 
@@ -43,13 +48,13 @@
         <div class="container">
             <h2 class="text-center">About Me</h2>
             <div class="row align-items-center">
-                <div class="col-lg-6">
+                <div class="col-12 col-md-6">
                     <h3>My Introduction</h3>
                     <p id="about-description"></p>
                     <a href="#contact" class="btn btn-primary mt-3">Contact Me</a>
                 </div>
-                <div class="col-lg-6">
-                    <div class="row text-center" id="about-stats"></div>
+                <div class="col-12 col-md-6 text-center">
+                    <div class="row justify-content-center" id="about-stats"></div>
                 </div>
             </div>
         </div>
@@ -58,14 +63,14 @@
 
     <!-- Experience Section -->
     <section id="experience" class="py-5">
-        <h2>Experience</h2>
+        <h2 class="text-center">Experience</h2>
         <div class="timeline" id="experience-list"></div>
     </section>
     <hr>
 
     <!-- Qualification Section -->
     <section id="qualification" class="py-5">
-        <h2>Qualification</h2>
+        <h2 class="text-center">Qualification</h2>
         <div class="timeline" id="qualification-list"></div>
     </section>
     <hr>
@@ -73,7 +78,7 @@
     <!-- Skills Section -->
     <section id="skills" class="py-5">
         <div class="container">
-            <h2>Skills</h2>
+            <h2 class="text-center">Skills</h2>
             <div class="row" id="skills-container"></div>
         </div>
     </section>
@@ -82,7 +87,7 @@
     <!-- Projects Section -->
     <section id="projects" class="py-5 bg-light">
         <div class="container">
-            <h2>Projects</h2>
+            <h2 class="text-center">Projects</h2>
             <div class="row" id="projects-container"></div>
         </div>
     </section>
@@ -91,19 +96,27 @@
     <!-- Contact Section -->
     <section id="contact" class="py-5 bg-light">
         <div class="container">
-            <h2>Contact Me</h2>
-            <div class="contact-details mb-4" id="contact-info"></div>
+            <h2 class="text-center">Contact Me</h2>
+            <div class="contact-details mb-4 text-center" id="contact-info"></div>
         </div>
     </section>
 
 </div>
 
 <!-- Footer -->
-<footer>
+<footer class="text-center">
     <p>© 2025 Varshaa | AI Developer | <a href="#contact">Contact Me</a></p>
 </footer>
 
 <!-- JS -->
 <script src="script.js"></script>
+<script>
+    // Toggle sidebar for mobile
+    const menuToggle = document.getElementById('menu-toggle');
+    const sidebar = document.getElementById('sidebar');
+    menuToggle.addEventListener('click', () => {
+        sidebar.classList.toggle('active');
+    });
+</script>
 </body>
 </html>
