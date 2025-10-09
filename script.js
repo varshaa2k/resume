@@ -104,7 +104,6 @@ fetch('data.json')
             <p><strong>Location:</strong> ${data.about.location}</p>
             <p><strong>LinkedIn:</strong> <a href="${data.about.linkedin}" target="_blank">${data.about.linkedin}</a></p>
             <p><strong>GitHub:</strong> <a href="${data.about.github}" target="_blank">${data.about.github}</a></p>
-            <p><strong>Website:</strong> <a href="${data.about.website}" target="_blank">${data.about.website}</a></p>
         `;
     })
     .catch(err => console.error('Error loading data:', err));
