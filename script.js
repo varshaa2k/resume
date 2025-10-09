@@ -4,7 +4,7 @@ fetch('data.json')
     .then(data => {
         // ===== Hero Section =====
         document.getElementById('hero-name').textContent = `Welcome, I'm ${data.about.name}`;
-        document.getElementById('hero-desc').textContent = `${data.about.title} | ${data.about.location} | ${data.about.email}`;
+        document.getElementById('hero-desc').textContent = `${data.about.title} `;
 
         // ===== About Section =====
         document.getElementById('about-description').textContent = data.about.description;
