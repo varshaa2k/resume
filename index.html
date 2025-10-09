@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Varshaa SV</title>
+
+    <!-- Bootstrap & Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- Sidebar Navigation -->
+<div class="sidebar">
+    <a href="#home"><i class="fas fa-home"></i> Home</a>
+    <a href="#about"><i class="fas fa-user"></i> About</a>
+    <a href="#experience"><i class="fas fa-briefcase me-2"></i> Experience</a>
+    <a href="#qualification"><i class="fas fa-graduation-cap me-2"></i> Qualification</a>
+    <a href="#skills"><i class="fas fa-chart-line"></i> Skills</a>
+    <a href="#projects"><i class="fas fa-project-diagram"></i> Projects</a>
+    <a href="#contact"><i class="fas fa-envelope"></i> Contact</a>
+</div>
+
+<!-- Main Content -->
+<div class="main-content">
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div>
+            <h1 id="hero-name"></h1>
+            <p id="hero-icons">💻 ☕️ 🧠 ❤️</p>
+            <p id="hero-desc"></p>
+            <a href="#contact" class="btn btn-custom btn-lg">Contact Me</a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-5">
+        <div class="container">
+            <h2 class="text-center">About Me</h2>
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <h3>My Introduction</h3>
+                    <p id="about-description"></p>
+                    <a href="#contact" class="btn btn-primary mt-3">Contact Me</a>
+                </div>
+                <div class="col-lg-6">
+                    <div class="row text-center" id="about-stats"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <hr>
+
+    <!-- Experience Section -->
+    <section id="experience" class="py-5">
+        <h2>Experience</h2>
+        <div class="timeline" id="experience-list"></div>
+    </section>
+    <hr>
+
+    <!-- Qualification Section -->
+    <section id="qualification" class="py-5">
+        <h2>Qualification</h2>
+        <div class="timeline" id="qualification-list"></div>
+    </section>
+    <hr>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-5">
+        <div class="container">
+            <h2>Skills</h2>
+            <div class="row" id="skills-container"></div>
+        </div>
+    </section>
+    <hr>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-5 bg-light">
+        <div class="container">
+            <h2>Projects</h2>
+            <div class="row" id="projects-container"></div>
+        </div>
+    </section>
+    <hr>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-5 bg-light">
+        <div class="container">
+            <h2>Contact Me</h2>
+            <div class="contact-details mb-4" id="contact-info"></div>
+        </div>
+    </section>
+
+</div>
+
+<!-- Footer -->
+<footer>
+    <p>© 2025 Varshaa | AI Developer | <a href="#contact">Contact Me</a></p>
+</footer>
+
+<!-- JS -->
+<script src="script.js"></script>
+</body>
+</html>

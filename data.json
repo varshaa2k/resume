@@ -1,0 +1,128 @@
+{
+  "about": {
+    "name": "Varshaa",
+    "title": "AI Developer & Data Scientist",
+    "description": "I am a passionate AI developer and data scientist with experience in building machine learning models, web applications, and data-driven solutions.",
+    "email": "varshaa@example.com",
+    "phone": "+123-456-7890",
+    "location": "Chennai, India",
+    "linkedin": "https://linkedin.com/in/varshaa",
+    "github": "https://github.com/varshaa",
+    "website": "https://varshaa.dev"
+  },
+  "projects": [
+    {
+      "title": "Resume Screening App",
+      "description": "An NLP-based app to analyze resumes and match them with job descriptions. Includes web scraping for trending jobs.",
+      "tech": ["Flask", "MongoDB", "NLP", "Python"],
+      "github": "https://github.com/varshaa2k/Resume_Screening_App",
+      "demo": "https://www.linkedin.com/posts/activity-7303828349544472576-_NZY?utm_source=share&utm_medium=member_desktop&rcm=ACoAADEKVCIBt9q_tCB7LpPEUCuWlnFjS_h8HJI"
+    },
+    {
+      "title": "Diabetes Detection",
+      "description": "AI model for early-stage Diabetes detection using image processing and deep learning.",
+      "tech": ["Computer Vision", "TensorFlow", "OpenCV", "Flask"],
+      "github": "https://github.com/varshaa2k/Diabetes_Detector"
+    },
+    {
+      "title": "GEN AI - GROQ ChatBot",
+      "description": "AI Chat App leveraging Groq hardware acceleration and OpenAI GPT-OSS-20B model for fast intelligent responses",
+      "tech": ["GEN AI", "LLM", "Streamlit"],
+      "github": "https://github.com/varshaa2k/GROQChatBot"
+    }
+  ],
+  "skills": [
+    {
+      "name": "Python",
+      "rating": 5,
+      "progress": 95,
+      "description": "Proficient in Python for data science, web development, and AI.",
+      "experience": "5 years",
+      "certifications": ["Python for Data Science", "Advanced Python Programming"]
+    },
+    {
+      "name": "Flask",
+      "rating": 4,
+      "progress": 85,
+      "description": "Experienced in building RESTful APIs and web applications using Flask.",
+      "experience": "3 years",
+      "certifications": ["Flask Web Development", "API Design with Flask"]
+    },
+    {
+      "name": "MongoDB",
+      "rating": 4,
+      "progress": 80,
+      "description": "Skilled in MongoDB for NoSQL data management and integration with Flask.",
+      "experience": "3 years",
+      "certifications": ["MongoDB Basics", "MongoDB Atlas Advanced"]
+    },
+    {
+      "name": "Machine Learning",
+      "rating": 5,
+      "progress": 90,
+      "description": "Experience in building ML models using scikit-learn, TensorFlow, and PyTorch.",
+      "experience": "4 years",
+      "certifications": ["ML with Python", "Deep Learning Specialization"]
+    },
+    {
+      "name": "Deep Learning",
+      "rating": 4,
+      "progress": 75,
+      "description": "Hands-on experience with CNNs, RNNs, and transformers.",
+      "experience": "3 years",
+      "certifications": ["Deep Learning with TensorFlow", "Computer Vision with PyTorch"]
+    },
+    {
+      "name": "GEN AI - LLM",
+      "rating": 4,
+      "progress": 70,
+      "description": "Hands-on experience with Langchain, Langgraph, Langsmith, RAG pipeline.",
+      "experience": "3 years",
+      "certifications": ["Deep Learning with TensorFlow", "Computer Vision with PyTorch"]
+    }
+  ],
+  "education": [
+    {
+      "degree": "Bachelor of Technology in Computer Science",
+      "university": "Anna University",
+      "year": "2020 - 2024",
+      "grade": "8.9 CGPA"
+    }
+  ],
+  "experience": {
+    "title": "Experience",
+    "subtitle": "My journey in the professional front",
+    "milestones": [
+      {
+        "role": "Senior Software Development Analyst (Data Engg, Mngmt and Governance)",
+        "company": "Data & AI - Accenture",
+        "duration": "October 2024 - Present"
+      },
+      {
+        "role": "Software Engineer",
+        "company": "Cognizant",
+        "duration": "September 2021 - October 2024"
+      }
+    ]
+  },
+  "certifications": [
+    {
+      "name": "Machine Learning with Python",
+      "organization": "Coursera",
+      "year": "2023",
+      "link": "https://coursera.org/certificates/ml-python"
+    },
+    {
+      "name": "Deep Learning Specialization",
+      "organization": "DeepLearning.AI",
+      "year": "2024",
+      "link": "https://deeplearning.ai/certificates/dl-specialization"
+    }
+  ],
+  "languages": [
+    {"name": "English", "proficiency": "Fluent"},
+    {"name": "Tamil", "proficiency": "Native"},
+    {"name": "Hindi", "proficiency": "Intermediate"}
+  ],
+  "interests": ["AI Research", "Web Development", "Open Source Contributions", "Blogging about Tech"]
+}
