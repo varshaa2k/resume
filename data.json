@@ -1,14 +1,13 @@
 {
   "about": {
     "name": "Varshaa",
-    "title": "AI Developer & Data Scientist",
-    "description": "I am a passionate AI developer and data scientist with experience in building machine learning models, web applications, and data-driven solutions.",
-    "email": "varshaa@example.com",
-    "phone": "+123-456-7890",
+    "title": "Software Engineer | Data Engineering, Management and Governance Senior Analyst | Full-Stack Engineer | Artificial Intelligence",
+    "description": "I am a passionate AI developer and data analyst with experience in building machine learning models, web applications, and data-driven solutions.",
+    "email": "veeravarsha2k@gmail.com",
+    "phone": "+91 9080469375",
     "location": "Chennai, India",
-    "linkedin": "https://linkedin.com/in/varshaa",
-    "github": "https://github.com/varshaa",
-    "website": "https://varshaa.dev"
+    "linkedin": "https://www.linkedin.com/in/varshaa-s-v-65665a1ab/",
+    "github": "https://github.com/varshaa2k"
   },
   "projects": [
     {
@@ -35,7 +34,7 @@
     {
       "name": "Python",
       "rating": 5,
-      "progress": 95,
+      "progress": 90,
       "description": "Proficient in Python for data science, web development, and AI.",
       "experience": "5 years",
       "certifications": ["Python for Data Science", "Advanced Python Programming"]
@@ -83,10 +82,15 @@
   ],
   "education": [
     {
-      "degree": "Bachelor of Technology in Computer Science",
-      "university": "Anna University",
+      "degree": "Bachelor of Engineering in Electronics and communication",
+      "university": "Anna University - Prince Shri Venkateshwara Padmavathy Engineering College",
       "year": "2020 - 2024",
-      "grade": "8.9 CGPA"
+      "grade": "8.5 CGPA"
+    },
+    {
+      "degree": "Master of Technology in Artificial Intelligence",
+      "university": "SRM University",
+      "year": "2024 - 2026"
     }
   ],
   "experience": {
@@ -113,10 +117,16 @@
       "link": "https://coursera.org/certificates/ml-python"
     },
     {
-      "name": "Deep Learning Specialization",
-      "organization": "DeepLearning.AI",
-      "year": "2024",
-      "link": "https://deeplearning.ai/certificates/dl-specialization"
+      "name": "MongoDB SI Associate",
+      "organization": "MongoDB University",
+      "year": "2025",
+      "link": "https://learn.mongodb.com/c/7BVHb4MBQSCVAWZ5YYb05Q"
+    },
+    {
+      "name": "Python for Data Science",
+      "organization": "IBM",
+      "year": "2025",
+      "link": "https://courses.cognitiveclass.ai/certificates/4664701c9d8f4d84b4a3cd958afc8400"
     }
   ],
   "languages": [
