@@ -15,21 +15,24 @@ fetch('data.json')
         // ===== About =====
         document.getElementById('about-description').textContent = data.about.description;
 
-        // ===== Experience =====
+        // ===== Experience Section (Two-column Layout) =====
         const experienceList = document.getElementById('experience-list');
         data.experience.milestones.forEach(exp => {
-            const div = document.createElement('div');
-            div.className = 'timeline-item';
-            div.innerHTML = `
-                <h4>${exp.role}</h4>
-                <p><strong>${exp.company}</strong></p>
-                <span>${exp.duration}</span>
-                ${exp.highlights ? `
+            const card = document.createElement('div');
+            card.className = 'experience-card';
+            card.innerHTML = `
+                <div class="experience-left">
+                    <h4>${exp.role}</h4>
+                    <p>${exp.company}</p>
+                    <span>${exp.duration}</span>
+                </div>
+                <div class="experience-right">
                     <ul class="experience-highlights">
                         ${exp.highlights.map(point => `<li>${point}</li>`).join('')}
-                    </ul>` : ''}
+                    </ul>
+                </div>
             `;
-            experienceList.appendChild(div);
+            experienceList.appendChild(card);
         });
 
         // ===== Qualification =====
