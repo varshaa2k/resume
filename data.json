@@ -87,43 +87,42 @@
       "year": "2024 - 2026"
     },
     {
-      "degree": "Bachelor of Engineering in Electronics and communication",
+      "degree": "Bachelor of Engineering in Electronics and Communication",
       "university": "Anna University - Prince Shri Venkateshwara Padmavathy Engineering College",
       "year": "2020 - 2024",
       "grade": "8.5 CGPA"
     }
   ],
   "experience": {
-  "title": "Experience",
-  "subtitle": "My journey in the professional front",
-  "milestones": [
-    {
-      "role": "Senior Software Development Analyst (Data Engg, Mngmt & Governance)",
-      "company": "Data & AI - Accenture",
-      "duration": "October 2024 – Present",
-      "highlights": [
-        "Designed and developed end-to-end data pipelines using Python, pandas, and SQL for enterprise-scale analytics.",
-        "Implemented data quality and governance frameworks ensuring consistency and audit readiness across multiple data sources.",
-        "Built and deployed Flask-based microservices integrated with MongoDB and GCP Cloud Functions for data control automation.",
-        "Worked on LangChain- and RAG-based AI solutions for document processing and intelligent insights.",
-        "Collaborated with cross-functional teams to enhance data lineage and observability within the governance layer."
-      ]
-    },
-    {
-      "role": "Software Engineer (Data & Analytics)",
-      "company": "Cognizant",
-      "duration": "September 2021 – October 2024",
-      "highlights": [
-        "Developed scalable ETL pipelines using Python, SQL, and Airflow to integrate diverse data sources.",
-        "Designed data models and validation workflows to support regulatory reporting and compliance analytics.",
-        "Automated data ingestion and processing tasks, reducing manual effort by over 40%.",
-        "Built interactive dashboards for data quality monitoring and performance tracking.",
-        "Contributed to ML-based anomaly detection and forecasting systems using LightGBM and ARIMA."
-      ]
-    }
-  ]
-},
-
+    "title": "Experience",
+    "subtitle": "My journey in the professional front",
+    "milestones": [
+      {
+        "role": "Senior Software Development Analyst (Data Engg, Mngmt & Governance)",
+        "company": "Data & AI - Accenture",
+        "duration": "October 2024 – Present",
+        "highlights": [
+          "Designed and developed end-to-end data pipelines using Python, pandas, and SQL for enterprise-scale analytics.",
+          "Implemented data quality and governance frameworks ensuring consistency and audit readiness across multiple data sources.",
+          "Built and deployed Flask-based microservices integrated with MongoDB and GCP Cloud Functions for data control automation.",
+          "Worked on LangChain- and RAG-based AI solutions for document processing and intelligent insights.",
+          "Collaborated with cross-functional teams to enhance data lineage and observability within the governance layer."
+        ]
+      },
+      {
+        "role": "Software Engineer (Data & Analytics)",
+        "company": "Cognizant",
+        "duration": "September 2021 – October 2024",
+        "highlights": [
+          "Developed scalable ETL pipelines using Python, SQL, and Airflow to integrate diverse data sources.",
+          "Designed data models and validation workflows to support regulatory reporting and compliance analytics.",
+          "Automated data ingestion and processing tasks, reducing manual effort by over 40%.",
+          "Built interactive dashboards for data quality monitoring and performance tracking.",
+          "Contributed to ML-based anomaly detection and forecasting systems using LightGBM and ARIMA."
+        ]
+      }
+    ]
+  },
   "certifications": [
     {
       "name": "Machine Learning with Python",
@@ -145,9 +144,9 @@
     }
   ],
   "languages": [
-    {"name": "English", "proficiency": "Fluent"},
-    {"name": "Tamil", "proficiency": "Native"},
-    {"name": "Hindi", "proficiency": "Intermediate"}
+    { "name": "English", "proficiency": "Fluent" },
+    { "name": "Tamil", "proficiency": "Native" },
+    { "name": "Hindi", "proficiency": "Intermediate" }
   ],
   "interests": ["AI Research", "Web Development", "Open Source Contributions", "Blogging about Tech"]
 }
