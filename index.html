@@ -66,7 +66,7 @@
         <div class="container">
             <h2 class="text-center mb-4">Experience</h2>
             <div class="timeline" id="experience-list">
-                <!-- Items dynamically loaded from data.json -->
+                <!-- Populated by script.js -->
             </div>
         </div>
     </section>
@@ -115,11 +115,9 @@
 <!-- JS -->
 <script src="script.js"></script>
 <script>
-    // Toggle sidebar for mobile
-    const menuToggle = document.getElementById('menu-toggle');
-    const sidebar = document.getElementById('sidebar');
-    menuToggle.addEventListener('click', () => {
-        sidebar.classList.toggle('active');
+    // Mobile menu toggle
+    document.getElementById('menu-toggle').addEventListener('click', () => {
+        document.getElementById('sidebar').classList.toggle('active');
     });
 </script>
 </body>
