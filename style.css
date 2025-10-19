@@ -1,4 +1,3 @@
-/* Smooth scrolling */
 html {
     scroll-behavior: smooth;
 }
@@ -71,64 +70,69 @@ body {
     background: #0056b3;
 }
 
-/* Timeline */
-.timeline {
-    position: relative;
-    margin: 40px 0;
-    padding: 0 10px;
+/* ===== Experience Section ===== */
+.experience-container {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
 }
 
-.timeline::before {
-    content: '';
-    position: absolute;
-    left: 50%;
-    top: 0;
-    bottom: 0;
-    width: 4px;
-    background: #007bff;
-    transform: translateX(-50%);
-    opacity: 0.2;
-}
-
-.timeline-item {
-    position: relative;
-    width: 50%;
-    padding: 30px 40px;
+.experience-card {
+    display: flex;
+    flex-wrap: wrap;
     background: #fff;
     border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
-    transition: 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 25px 30px;
+    transition: all 0.3s ease;
 }
 
-.timeline-item:nth-child(odd) {
-    left: 0;
-    text-align: right;
-    margin-right: 30px;
-}
-
-.timeline-item:nth-child(even) {
-    left: 50%;
-    margin-left: 30px;
-}
-
-.timeline-item:hover {
+.experience-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.12);
 }
 
-/* Experience bullet points */
+.experience-left {
+    flex: 1;
+    min-width: 250px;
+    border-right: 3px solid #007bff;
+    padding-right: 20px;
+}
+
+.experience-right {
+    flex: 2;
+    min-width: 300px;
+    padding-left: 25px;
+}
+
+.experience-left h4 {
+    font-size: 1.2rem;
+    margin-bottom: 5px;
+    color: #007bff;
+}
+
+.experience-left p {
+    margin: 0;
+    font-weight: 500;
+}
+
+.experience-left span {
+    font-size: 0.9rem;
+    color: #666;
+}
+
+/* Bullet list */
 .experience-highlights {
     list-style: none;
     padding: 0;
-    margin-top: 10px;
+    margin: 0;
 }
 
 .experience-highlights li {
     position: relative;
     padding-left: 25px;
-    margin-bottom: 8px;
-    font-size: 0.95em;
-    color: #444;
+    margin-bottom: 10px;
+    font-size: 0.95rem;
+    color: #333;
 }
 
 .experience-highlights li::before {
@@ -151,13 +155,16 @@ body {
         margin-left: 0;
         padding: 20px;
     }
-    .timeline::before {
-        left: 10px;
+    .experience-card {
+        flex-direction: column;
     }
-    .timeline-item {
-        width: 100%;
-        left: 0 !important;
-        text-align: left !important;
-        margin: 20px 0;
+    .experience-left {
+        border-right: none;
+        border-bottom: 2px solid #007bff;
+        margin-bottom: 15px;
+        padding-right: 0;
+    }
+    .experience-right {
+        padding-left: 0;
     }
 }
