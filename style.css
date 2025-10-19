@@ -3,24 +3,23 @@ html {
     scroll-behavior: smooth;
 }
 
-/* Overall page styling */
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background: #f1f5f9;
-    color: #333;          
+    color: #333;
     margin: 0;
     padding: 0;
-    font-size: 1.5em; 
+    font-size: 1.1em;
 }
 
-/* Sidebar Navigation */
+/* Sidebar */
 .sidebar {
     position: fixed;
     top: 0;
     left: 0;
     height: 100%;
     width: 240px;
-    background: #2c3e50;  
+    background: #2c3e50;
     color: #fff;
     padding-top: 20px;
     z-index: 1000;
@@ -37,18 +36,17 @@ body {
 }
 
 .sidebar a:hover {
-    background: #007bff;  
-    color: #fff;
+    background: #007bff;
 }
 
-/* Main content area */
+/* Main content */
 .main-content {
     margin-left: 240px;
     padding: 40px;
     transition: 0.3s;
 }
 
-/* Hero Section */
+/* Hero */
 .hero {
     min-height: 60vh;
     color: #433f4a;
@@ -56,16 +54,11 @@ body {
     align-items: center;
     justify-content: center;
     text-align: center;
-    padding: 40px 20px;
 }
 
 .hero h1 {
     font-size: 60px;
     font-weight: bold;
-}
-
-.hero p {
-    font-size: 22px;
 }
 
 .btn-custom {
@@ -76,23 +69,9 @@ body {
 
 .btn-custom:hover {
     background: #0056b3;
-    color: #fff;
 }
 
-/* Section Styling */
-section {
-    padding: 80px 0;
-}
-
-section h2 {
-    font-size: 36px;
-    color: #2c3e50;
-    text-align: center;
-    margin-bottom: 30px;
-}
-
-/* ===== Timeline Section (Enhanced for Experience Notes) ===== */
-
+/* Timeline */
 .timeline {
     position: relative;
     margin: 40px 0;
@@ -115,16 +94,10 @@ section h2 {
     position: relative;
     width: 50%;
     padding: 30px 40px;
-    box-sizing: border-box;
     background: #fff;
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.timeline-item:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.12);
+    transition: 0.3s ease;
 }
 
 .timeline-item:nth-child(odd) {
@@ -138,39 +111,23 @@ section h2 {
     margin-left: 30px;
 }
 
-.timeline-item h4 {
-    color: #007bff;
-    font-size: 1.3em;
-    font-weight: 600;
-    margin-bottom: 8px;
+.timeline-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.12);
 }
 
-.timeline-item p {
-    color: #2c3e50;
-    font-weight: 500;
-    margin: 0;
-}
-
-.timeline-item span {
-    font-size: 0.9em;
-    color: #777;
-    display: block;
-    margin-bottom: 10px;
-}
-
-/* Experience Notes (Bullet Points) */
+/* Experience bullet points */
 .experience-highlights {
-    list-style-type: none;
-    margin: 10px 0 0;
+    list-style: none;
     padding: 0;
+    margin-top: 10px;
 }
 
 .experience-highlights li {
     position: relative;
-    margin: 8px 0;
     padding-left: 25px;
+    margin-bottom: 8px;
     font-size: 0.95em;
-    line-height: 1.6;
     color: #444;
 }
 
@@ -178,111 +135,29 @@ section h2 {
     content: "•";
     position: absolute;
     left: 8px;
-    top: 0;
     color: #007bff;
-    font-size: 1.2em;
-    line-height: 1;
 }
 
-/* Progress bars */
-.progress {
-    background: #ddd;
-    border-radius: 5px;
-    overflow: hidden;
-    width: 100%;
-    height: 20px;
-}
-
-.progress-bar {
-    background: #4caf50;
-    height: 100%;
-}
-
-/* Cards */
-.card {
-    border-radius: 8px;
-}
-
-/* Footer */
-footer {
-    background: #2c3e50;
-    color: #fff;
-    text-align: center;
-    padding: 20px 0;
-}
-
-footer a {
-    color: #007bff;
-    text-decoration: none;
-}
-
-footer a:hover {
-    color: #0056b3;
-}
-
-/* ======================= */
-/* Responsive Adjustments */
-/* ======================= */
-
-/* Sidebar toggle for mobile */
+/* Responsive */
 @media (max-width: 768px) {
     .sidebar {
         width: 200px;
         left: -200px;
-        height: 100%;
     }
-
     .sidebar.active {
         left: 0;
     }
-
     .main-content {
         margin-left: 0;
         padding: 20px;
     }
-
     .timeline::before {
         left: 10px;
     }
-
     .timeline-item {
         width: 100%;
         left: 0 !important;
         text-align: left !important;
         margin: 20px 0;
-        padding: 20px;
-    }
-
-    .timeline-item:nth-child(odd),
-    .timeline-item:nth-child(even) {
-        margin: 20px 0;
-    }
-
-    .timeline-item h4 {
-        font-size: 1.2em;
-    }
-
-    .experience-highlights li {
-        font-size: 1em;
-        padding-left: 20px;
-    }
-
-    .experience-highlights li::before {
-        left: 2px;
-    }
-}
-
-/* Small devices */
-@media (max-width: 576px) {
-    .hero h1 {
-        font-size: 1.5rem;
-    }
-
-    .hero p {
-        font-size: 0.9rem;
-    }
-
-    section {
-        padding: 50px 10px;
     }
 }
