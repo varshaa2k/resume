@@ -104,21 +104,21 @@
         "highlights": [
           "Designed and developed end-to-end data pipelines using Python, pandas, and SQL for enterprise-scale analytics.",
           "Implemented data quality and governance frameworks ensuring consistency and audit readiness across multiple data sources.",
-          "Built and deployed Flask-based microservices integrated with MongoDB and GCP Cloud Functions for data control automation.",
-          "Worked on LangChain- and RAG-based AI solutions for document processing and intelligent insights.",
+          "Built and deployed Flask-based microservices integrated with MongoDB.",
+          "Worked on LangChain and RAG-based AI solutions for document processing and intelligent insights.",
           "Collaborated with cross-functional teams to enhance data lineage and observability within the governance layer."
         ]
       },
       {
-        "role": "Software Engineer (Data & Analytics)",
+        "role": "Software Engineer",
         "company": "Cognizant",
         "duration": "September 2021 – October 2024",
         "highlights": [
-          "Developed scalable ETL pipelines using Python, SQL, and Airflow to integrate diverse data sources.",
+          "Developed scalable ETL pipelines using Python, SQL and PowerBI to integrate diverse data sources.",
           "Designed data models and validation workflows to support regulatory reporting and compliance analytics.",
           "Automated data ingestion and processing tasks, reducing manual effort by over 40%.",
           "Built interactive dashboards for data quality monitoring and performance tracking.",
-          "Contributed to ML-based anomaly detection and forecasting systems using LightGBM and ARIMA."
+          "Contributed to ML-based prediction systems using Decision Tree and displayed outputs in Tableau."
         ]
       }
     ]
