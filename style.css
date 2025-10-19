@@ -91,10 +91,12 @@ section h2 {
     margin-bottom: 30px;
 }
 
-/* Timeline */
+/* ===== Timeline Section (Enhanced for Experience Notes) ===== */
+
 .timeline {
     position: relative;
     margin: 40px 0;
+    padding: 0 10px;
 }
 
 .timeline::before {
@@ -106,30 +108,80 @@ section h2 {
     width: 4px;
     background: #007bff;
     transform: translateX(-50%);
+    opacity: 0.2;
 }
 
 .timeline-item {
     position: relative;
     width: 50%;
-    padding: 20px 40px;
+    padding: 30px 40px;
     box-sizing: border-box;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.timeline-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.12);
 }
 
 .timeline-item:nth-child(odd) {
     left: 0;
     text-align: right;
+    margin-right: 30px;
 }
 
 .timeline-item:nth-child(even) {
     left: 50%;
+    margin-left: 30px;
 }
 
 .timeline-item h4 {
-    margin: 0 0 5px;
+    color: #007bff;
+    font-size: 1.3em;
+    font-weight: 600;
+    margin-bottom: 8px;
 }
 
-.timeline-item p, .timeline-item span {
+.timeline-item p {
+    color: #2c3e50;
+    font-weight: 500;
     margin: 0;
+}
+
+.timeline-item span {
+    font-size: 0.9em;
+    color: #777;
+    display: block;
+    margin-bottom: 10px;
+}
+
+/* Experience Notes (Bullet Points) */
+.experience-highlights {
+    list-style-type: none;
+    margin: 10px 0 0;
+    padding: 0;
+}
+
+.experience-highlights li {
+    position: relative;
+    margin: 8px 0;
+    padding-left: 25px;
+    font-size: 0.95em;
+    line-height: 1.6;
+    color: #444;
+}
+
+.experience-highlights li::before {
+    content: "•";
+    position: absolute;
+    left: 8px;
+    top: 0;
+    color: #007bff;
+    font-size: 1.2em;
+    line-height: 1;
 }
 
 /* Progress bars */
@@ -190,23 +242,33 @@ footer a:hover {
     }
 
     .timeline::before {
-        left: 8px;
+        left: 10px;
     }
 
     .timeline-item {
         width: 100%;
         left: 0 !important;
         text-align: left !important;
-        padding-left: 30px;
-        margin-bottom: 20px;
+        margin: 20px 0;
+        padding: 20px;
     }
 
-    .hero h1 {
-        font-size: 2rem;
+    .timeline-item:nth-child(odd),
+    .timeline-item:nth-child(even) {
+        margin: 20px 0;
     }
 
-    .hero p {
-        font-size: 1rem;
+    .timeline-item h4 {
+        font-size: 1.2em;
+    }
+
+    .experience-highlights li {
+        font-size: 1em;
+        padding-left: 20px;
+    }
+
+    .experience-highlights li::before {
+        left: 2px;
     }
 }
 
