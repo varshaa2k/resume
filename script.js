@@ -40,17 +40,23 @@ fetch('data.json')
         `;
 
         // ===== Experience Section =====
-        const experienceList = document.getElementById('experience-list');
-        data.experience.milestones.forEach(exp => {
-            const div = document.createElement('div');
-            div.className = 'timeline-item';
-            div.innerHTML = `
-                <h4>${exp.role}</h4>
-                <p>${exp.company}</p>
-                <span>${exp.duration}</span>
-            `;
-            experienceList.appendChild(div);
-        });
+const experienceList = document.getElementById('experience-list');
+data.experience.milestones.forEach(exp => {
+    const div = document.createElement('div');
+    div.className = 'timeline-item';
+    div.innerHTML = `
+        <h4>${exp.role}</h4>
+        <p><strong>${exp.company}</strong></p>
+        <span>${exp.duration}</span>
+        ${exp.highlights ? `
+            <ul>
+                ${exp.highlights.map(point => `<li>${point}</li>`).join('')}
+            </ul>
+        ` : ''}
+    `;
+    experienceList.appendChild(div);
+});
+
 
         // ===== Qualification Section =====
         const qualList = document.getElementById('qualification-list');
