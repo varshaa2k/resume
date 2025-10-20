@@ -14,8 +14,30 @@
   },
   "experience": {
     "milestones": [
-      {"role": "Senior Software Development Analyst", "company": "Accenture", "duration": "Oct 2024 - Present"},
-      {"role": "Software Engineer", "company": "Cognizant", "duration": "Jul 2021 - Sep 2024"}
+      {
+        "role": "Senior Software Development Analyst",
+        "company": "Accenture",
+        "duration": "Oct 2024 - Present",
+        "details": [
+           "Designed and developed end-to-end data pipelines using Python, pandas, and SQL for enterprise-scale analytics.",
+          "Implemented data quality and governance frameworks ensuring consistency and audit readiness across multiple data sources.",
+          "Built and deployed Flask-based microservices integrated with MongoDB and GCP Cloud Functions for data control automation.",
+          "Worked on LangChain- and RAG-based AI solutions for document processing and intelligent insights.",
+          "Collaborated with cross-functional teams to enhance data lineage and observability within the governance layer."
+        ]
+      },
+      {
+        "role": "Software Engineer",
+        "company": "Cognizant",
+        "duration": "Jul 2021 - Sep 2024",
+        "details": [
+          "Developed scalable ETL pipelines using Python, SQL, and Airflow to integrate diverse data sources.",
+          "Designed data models and validation workflows to support regulatory reporting and compliance analytics.",
+          "Automated data ingestion and processing tasks, reducing manual effort by over 40%.",
+          "Built interactive dashboards for data quality monitoring and performance tracking.",
+          "Contributed to ML-based detection and using decision tree."
+        ]
+      }
     ]
   },
   "education": [
@@ -61,8 +83,8 @@
   ],
   "hobbies": ["Badminton", "Reading", "Painting", "AI Research"],
   "languages": [
-    { "language": "English", "proficiency": "Fluent (Read, write, speak)" },
-    { "language": "Tamil", "proficiency": "Native (Read, write, speak)" },
+    { "language": "English", "proficiency": "Fluent (Read, Write, Speak)" },
+    { "language": "Tamil", "proficiency": "Native (Read, Write, Speak)" },
     { "language": "Hindi", "proficiency": "Read Only" }
   ]
 }
