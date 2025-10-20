@@ -1,5 +1,6 @@
 body {
     font-family: Arial, sans-serif;
+    margin-left: 210px; 
 }
 .card {
     transition: transform 0.3s;
@@ -12,6 +13,39 @@ body {
 .progress-bar {
     transition: width 0.6s ease;
 }
+/* Sidebar */
+.sidebar {
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 200px;
+    background-color: #343a40;
+    padding-top: 20px;
+    z-index: 1000;
+}
+
+.sidebar ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.sidebar ul li {
+    padding: 15px;
+    text-align: left;
+}
+
+.sidebar ul li a {
+    color: #fff;
+    text-decoration: none;
+    display: block;
+}
+
+.sidebar ul li a:hover {
+    background-color: #495057;
+    color: #fff;
+}
+
 
 /* Qualification & Timeline */
 #qualification, #experience {
