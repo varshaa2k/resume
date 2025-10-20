@@ -1,102 +1,94 @@
-document.addEventListener('DOMContentLoaded', () => {
+fetch('data.json')
+  .then(response => response.json())
+  .then(data => {
 
-    const sidebarToggle = document.getElementById('sidebarToggle');
-    const sidebar = document.getElementById('sidebar');
+    // About
+    document.getElementById('name').textContent = data.about.name;
+    document.getElementById('tagline').textContent = data.about.tagline;
+    document.getElementById('roles').textContent = data.about.roles.join(' | ');
+    document.getElementById('description_intro').innerHTML = data.about.description_intro;
+    document.getElementById('description_details').textContent = data.about.description_details;
 
-    sidebarToggle.addEventListener('click', () => {
-        sidebar.classList.toggle('active');
+    // Let's Connect button
+    document.getElementById('lets-connect').addEventListener('click', () => {
+      document.getElementById('contact').scrollIntoView({behavior: "smooth"});
     });
 
-    // Load JSON data
-    fetch('data.json')
-        .then(response => response.json())
-        .then(data => {
-            loadExperience(data.experience.milestones);
-            loadEducation(data.education);
-            loadSkills(data.skills);
-            loadProjects(data.projects);
-            loadHonours(data.honours);
-            loadHobbies(data.hobbies);
-            loadLanguages(data.languages);
-        })
-        .catch(err => console.error('Error loading data.json:', err));
+    // Contact
+    document.getElementById('email').textContent = data.about.email;
+    document.getElementById('phone').textContent = data.about.phone;
+    document.getElementById('location').textContent = data.about.location;
 
-    // Scroll to section
-    window.scrollToSection = (id) => {
-        document.getElementById(id).scrollIntoView({behavior: "smooth"});
-    }
+    // Experience
+    const expContainer = document.getElementById('experience-container');
+    data.experience.milestones.forEach(exp => {
+      const div = document.createElement('div');
+      div.innerHTML = `<h3>${exp.role} - ${exp.company}</h3><p>${exp.duration}</p>`;
+      const ul = document.createElement('ul');
+      exp.details.forEach(d => {
+        const li = document.createElement('li');
+        li.textContent = d;
+        ul.appendChild(li);
+      });
+      div.appendChild(ul);
+      expContainer.appendChild(div);
+    });
 
-    function loadExperience(exp) {
-        const container = document.getElementById('experience-container');
-        exp.forEach(e => {
-            const div = document.createElement('div');
-            div.classList.add('timeline-item');
-            div.innerHTML = `<h4>${e.role}</h4><p>${e.company}</p><span>${e.duration}</span>`;
-            container.appendChild(div);
-        });
-    }
+    // Education
+    const eduContainer = document.getElementById('education-container');
+    data.education.forEach(edu => {
+      const div = document.createElement('div');
+      div.innerHTML = `<h3>${edu.degree}</h3><p>${edu.university}</p><span>${edu.year}</span>`;
+      eduContainer.appendChild(div);
+    });
 
-    function loadEducation(edu) {
-        const container = document.getElementById('education-container');
-        edu.forEach(e => {
-            const div = document.createElement('div');
-            div.classList.add('timeline-item');
-            div.innerHTML = `<h4>${e.degree}</h4><p>${e.university}</p><span>${e.year}</span>`;
-            container.appendChild(div);
-        });
-    }
+    // Skills
+    const skillsContainer = document.getElementById('skills-container');
+    data.skills.forEach(skill => {
+      const div = document.createElement('div');
+      div.innerHTML = `<h4>${skill.name}</h4>
+                       <p>${skill.description}</p>
+                       <div class="progress">
+                         <div style="width:${skill.progress}%; background-color:#007bff; color:#fff; padding:2px;">${skill.progress}%</div>
+                       </div>`;
+      skillsContainer.appendChild(div);
+    });
 
-    function loadSkills(skills) {
-        const container = document.getElementById('skills-container');
-        skills.forEach(s => {
-            const div = document.createElement('div');
-            div.classList.add('skill-card');
-            div.innerHTML = `<h4>${s.name}</h4><p>${s.description}</p><div class="progress-bar" style="width:${s.progress}%">${s.progress}%</div>`;
-            container.appendChild(div);
-        });
-    }
+    // Projects
+    const projectsContainer = document.getElementById('projects-container');
+    data.projects.forEach(proj => {
+      const div = document.createElement('div');
+      div.innerHTML = `<h4>${proj.title}</h4>
+                       <p>${proj.description}</p>
+                       <p>Tech: ${proj.tech.join(', ')}</p>
+                       <a href="${proj.github}" target="_blank">GitHub</a>
+                       ${proj.demo ? `<a href="${proj.demo}" target="_blank">Demo</a>` : ''}`;
+      projectsContainer.appendChild(div);
+    });
 
-    function loadProjects(projects) {
-        const container = document.getElementById('projects-container');
-        projects.forEach(p => {
-            const div = document.createElement('div');
-            div.classList.add('project-card');
-            const techHtml = p.tech ? p.tech.map(t => `<span>${t}</span>`).join('') : '';
-            div.innerHTML = `
-                <h4>${p.title}</h4>
-                <p>${p.description}</p>
-                <div class="tech-list">${techHtml}</div>
-                <a href="${p.github}" target="_blank" class="btn btn-primary">GitHub</a>
-                ${p.demo ? `<a href="${p.demo}" target="_blank" class="btn btn-outline-success">Demo</a>` : ''}
-            `;
-            container.appendChild(div);
-        });
-    }
+    // Honours
+    const honoursContainer = document.getElementById('honours-list');
+    data.honours.forEach(h => {
+      const li = document.createElement('li');
+      li.textContent = h;
+      honoursContainer.appendChild(li);
+    });
 
-    function loadHonours(honours){
-        const container = document.getElementById('honours-list');
-        honours.forEach(h => {
-            const li = document.createElement('li');
-            li.textContent = h;
-            container.appendChild(li);
-        });
-    }
+    // Hobbies
+    const hobbiesContainer = document.getElementById('hobbies-list');
+    data.hobbies.forEach(h => {
+      const li = document.createElement('li');
+      li.textContent = h;
+      hobbiesContainer.appendChild(li);
+    });
 
-    function loadHobbies(hobbies){
-        const container = document.getElementById('hobbies-list');
-        hobbies.forEach(h => {
-            const li = document.createElement('li');
-            li.textContent = h;
-            container.appendChild(li);
-        });
-    }
+    // Languages
+    const langsContainer = document.getElementById('languages-list');
+    data.languages.forEach(l => {
+      const div = document.createElement('div');
+      div.textContent = `${l.language} - ${l.proficiency}`;
+      langsContainer.appendChild(div);
+    });
 
-    function loadLanguages(langs){
-        const container = document.getElementById('languages-list');
-        langs.forEach(l => {
-            const div = document.createElement('div');
-            div.textContent = `${l.language} - ${l.proficiency}`;
-            container.appendChild(div);
-        });
-    }
-});
+  })
+  .catch(err => console.error("Error loading data.json:", err));
