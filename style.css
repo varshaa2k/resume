@@ -77,33 +77,51 @@ section h2 {
 }
 
 /* Card Layout */
+/* Card Container */
 .card-container {
   display: flex;
   flex-wrap: wrap;
-  gap: 20px;
-  justify-content: center;
+  gap: 30px;
+  justify-content: center; /* Center cards horizontally */
+  margin-top: 20px;
 }
+
+/* Individual Card */
 .card {
-  background: #fff;
-  padding: 20px;
-  border-radius: 12px;
-  width: 300px;
-  box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+  background: #ffffff;
+  padding: 25px;
+  border-radius: 15px;
+  width: 350px;       /* Slightly larger */
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15); /* Deeper shadow for depth */
   transition: transform 0.3s, box-shadow 0.3s;
 }
+
 .card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 12px 24px rgba(0,0,0,0.15);
+  box-shadow: 0 12px 25px rgba(0,0,0,0.2);
 }
-.card h3, .card h4 { margin-top: 0; color: #1f2937; }
-.card p, .card span { margin: 6px 0; color: #555; }
+
+.card h3, .card h4 {
+  margin-top: 0;
+  color: #333;
+}
+
+.card p, .card span {
+  margin: 8px 0;
+  color: #555;
+}
+
 .card a {
   display: inline-block;
-  margin-top: 8px;
+  margin-top: 10px;
   text-decoration: none;
   color: #007bff;
+  font-weight: 500;
 }
-.card a:hover { text-decoration: underline; }
+
+.card a:hover {
+  text-decoration: underline;
+}
 
 /* Skills Progress */
 .progress {
