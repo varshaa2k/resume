@@ -33,5 +33,18 @@
     {"title": "EEG-Based Brain-to-Text", "description": "Translate EEG signals to text using deep learning.", "github": "https://github.com/varshaa/eeg-brain-text", "demo": ""},
     {"title": "RAG Chatbot", "description": "Developed a research Q&A bot using LangChain.", "github": "https://github.com/varshaa/rag-chatbot", "demo": "https://linkedin.com/demo1"},
     {"title": "Control Framework", "description": "Flask app for document and exception management.", "github": "https://github.com/varshaa/control-framework", "demo": ""}
+  ],
+  "honours": [
+    "Full 100% Merit Scholarship for B.E degree",
+    "Winner - Women’s Badminton Inter-zonal Tournament, Anna University 2020",
+    "Publication: 'Increased income for farmers using smart polyhouse farming', IJSREM, Vol 05, Issue 03, Mar 2021",
+    "Participant - Smart India Hackathon 2020, qualified to final stage",
+    "Chhatra Vishwakarma Awards 2019 - Concept to increase village farming income"
+  ],
+  "hobbies": ["Badminton", "Reading", "Painting", "AI Research"],
+  "languages": [
+    {"language": "English", "proficiency": "Fluent (Read, Write, Speak)"},
+    {"language": "Tamil", "proficiency": "Native (Read, Write, Speak)"},
+    {"language": "Hindi", "proficiency": "Read Only"}
   ]
 }
