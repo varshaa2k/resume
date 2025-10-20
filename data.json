@@ -157,9 +157,10 @@
     }
   ],
   "languages": [
-    { "name": "English", "proficiency": "Fluent" },
-    { "name": "Tamil", "proficiency": "Native" },
-    { "name": "Hindi", "proficiency": "Intermediate" }
-  ],
+  { "language": "English", "proficiency": "Fluent (Read, Write, Speak)" },
+  { "language": "Tamil", "proficiency": "Native(Read, Write, Speak)" },
+  { "language": "Hindi", "proficiency": "Intermediate(Read)" }
+]
+
   "interests": ["AI Research", "Web Development", "Open Source Contributions", "Blogging about Tech"]
 }
