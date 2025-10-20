@@ -9,6 +9,19 @@
     "linkedin": "https://www.linkedin.com/in/varshaa-s-v-65665a1ab/",
     "github": "https://github.com/varshaa2k"
   },
+  "honours": [
+    "Full 100% Merit Scholarship for B.E degree",
+    "Winner - Women’s Badminton Inter-zonal Tournament, Anna University 2020",
+    "Publication: 'Increased income for farmers using smart polyhouse farming', IJSREM, Vol 05, Issue 03, Mar 2021",
+    "Participant - Smart India Hackathon 2020, qualified to final stage",
+    "Chhatra Vishwakarma Awards 2019 - Concept to increase village farming income"
+  ],
+  "hobbies": ["Badminton", "Reading", "Traveling", "AI Research"],
+  "languages": [
+    { "language": "English", "proficiency": "Fluent" },
+    { "language": "Tamil", "proficiency": "Native" },
+    { "language": "Hindi", "proficiency": "Read Only" }
+  ],
   "projects": [
     {
       "title": "Resume Screening App",
