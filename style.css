@@ -1,213 +1,138 @@
-/* General */
 body {
   font-family: Arial, sans-serif;
   margin: 0;
-  padding: 0;
-  scroll-behavior: smooth;
-}
-
-.section {
-  padding: 50px 20px;
-  max-width: 1000px;
-  margin: 0 auto;
-}
-
-h2 {
-  text-align: center;
-  margin-bottom: 30px;
+  display: flex;
 }
 
 /* Sidebar */
 #sidebar {
+  width: 220px;
+  background: #1b1b2f;
+  color: #fff;
+  padding: 20px;
   position: fixed;
-  left: 0;
-  top: 0;
-  width: 200px;
-  height: 100%;
-  background: #111;
-  padding-top: 20px;
+  height: 100vh;
 }
-
 #sidebar ul {
   list-style: none;
   padding: 0;
 }
-
 #sidebar ul li {
-  margin: 20px 0;
+  margin: 15px 0;
 }
-
 #sidebar ul li a {
-  color: white;
+  color: #fff;
   text-decoration: none;
   font-weight: bold;
 }
-
 #sidebar ul li a:hover {
-  color: #1abc9c;
+  color: #00d4ff;
+}
+
+/* Main content */
+#main-content {
+  margin-left: 240px;
+  padding: 20px;
+  width: 100%;
 }
 
 /* Hero */
 .hero {
-  margin-left: 220px;
-  background: #1abc9c;
-  color: white;
   text-align: center;
-  padding: 100px 20px;
+  padding: 60px 20px;
+  background: #f0f8ff;
 }
-
-.hero-content h1 {
-  font-size: 2.5em;
+.hero h1 {
+  font-size: 2em;
+  margin-bottom: 10px;
 }
-
-.btn-contact {
-  background: white;
-  color: #1abc9c;
+.hero p {
+  font-size: 1.2em;
+}
+.btn {
+  padding: 10px 20px;
+  background: #00d4ff;
+  color: #fff;
   border: none;
-  padding: 12px 25px;
-  margin-top: 20px;
-  cursor: pointer;
-  font-size: 1em;
   border-radius: 5px;
-  transition: 0.3s;
+  cursor: pointer;
+}
+.btn:hover {
+  background: #008ecf;
 }
 
-.btn-contact:hover {
-  background: #16a085;
-  color: white;
+/* Sections */
+.section {
+  padding: 40px 20px;
+  border-bottom: 1px solid #ccc;
 }
-
-/* Cards */
-.skills-grid, .projects-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 20px;
-}
-
-.card {
-  background: #f5f5f5;
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-  transition: transform 0.3s;
-}
-
-.card:hover {
-  transform: scale(1.05);
-}
-
-/* Timeline */
-.timeline {
-  border-left: 3px solid #1abc9c;
-  padding-left: 20px;
-  margin: 0;
-}
-
-.timeline-item {
+.section h2 {
   margin-bottom: 20px;
+  color: #1b1b2f;
 }
 
-.timeline-item h4 {
-  margin: 0;
+/* Experience & Education */
+.experience-item, .education-item {
+  margin-bottom: 20px;
+  border-left: 3px solid #00d4ff;
+  padding-left: 10px;
+}
+.experience-item ul {
+  margin-top: 10px;
+  padding-left: 20px;
 }
 
-.timeline-item ul {
-  margin-top: 5px;
-  margin-left: 20px;
+/* Skills */
+.skill {
+  margin-bottom: 15px;
 }
-
-/* Progress bar */
+.skill-name {
+  font-weight: bold;
+}
 .progress {
   background: #ddd;
   border-radius: 10px;
   overflow: hidden;
   height: 20px;
-  margin-top: 5px;
 }
-
 .progress-bar {
-  background: #1abc9c;
   height: 100%;
-  text-align: center;
-  color: white;
-  line-height: 20px;
-  transition: width 0.6s ease;
+  background: #00d4ff;
+  width: 0;
+  text-align: right;
+  padding-right: 5px;
+  color: #fff;
+  transition: width 0.6s;
 }
 
-/* Honors and Hobbies */
-.honours-grid, .hobbies-grid {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-
-.honour-item, .hobby-item {
-  background: #f5f5f5;
-  padding: 15px 20px;
+/* Projects */
+.project {
+  border: 1px solid #ccc;
+  padding: 15px;
+  margin-bottom: 15px;
   border-radius: 8px;
-  box-shadow: 0 3px 10px rgba(0,0,0,0.1);
 }
-
-/* Languages vertical */
-.languages-vertical {
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-}
-
-.language-card {
-  background: #f5f5f5;
-  padding: 15px 20px;
-  border-radius: 8px;
-  box-shadow: 0 3px 10px rgba(0,0,0,0.1);
-}
-
-/* Badges for project tech */
-.badge {
-  background: #1abc9c;
-  color: white;
-  padding: 3px 8px;
-  border-radius: 5px;
-  margin-right: 5px;
-  font-size: 0.85em;
-}
-
-/* Project buttons */
-.btn-github, .btn-demo {
+.tech-badge {
   display: inline-block;
-  margin-top: 10px;
+  background: #00d4ff;
+  color: #fff;
+  padding: 3px 8px;
   margin-right: 5px;
-  padding: 6px 12px;
   border-radius: 5px;
-  text-decoration: none;
-  color: white;
   font-size: 0.9em;
 }
 
-.btn-github {
-  background: #333;
+/* Lists */
+ul {
+  padding-left: 20px;
+}
+li {
+  margin-bottom: 8px;
 }
 
-.btn-demo {
-  background: #1abc9c;
-}
-
-.btn-github:hover {
-  background: #555;
-}
-
-.btn-demo:hover {
-  background: #16a085;
-}
-
-/* Contact */
-.contact a {
-  color: #1abc9c;
-  text-decoration: none;
-}
-
-.contact a:hover {
-  text-decoration: underline;
+/* Languages vertical */
+#languages-container li {
+  display: block;
 }
 
 /* Responsive */
@@ -217,9 +142,7 @@ h2 {
     width: 100%;
     height: auto;
   }
-
-  .hero {
+  #main-content {
     margin-left: 0;
-    padding: 80px 20px;
   }
 }
