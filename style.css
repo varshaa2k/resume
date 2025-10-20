@@ -1,96 +1,148 @@
 body {
     font-family: Arial, sans-serif;
-    margin-left: 210px; 
-}
-.card {
-    transition: transform 0.3s;
-}
-.card:hover {
-    transform: scale(1.05);
+    margin: 0;
+    background: #f5f5f5;
+    color: #333;
 }
 
-/* Progress Bar */
-.progress-bar {
-    transition: width 0.6s ease;
-}
 /* Sidebar */
 .sidebar {
     position: fixed;
-    left: 0;
     top: 0;
+    left: 0;
+    width: 220px;
     height: 100%;
-    width: 200px;
-    background-color: #343a40;
+    background: #2c3e50;
     padding-top: 20px;
-    z-index: 1000;
+    display: flex;
+    flex-direction: column;
 }
-
-.sidebar ul {
-    list-style-type: none;
-    padding: 0;
-}
-
-.sidebar ul li {
-    padding: 15px;
-    text-align: left;
-}
-
-.sidebar ul li a {
+.sidebar a {
     color: #fff;
     text-decoration: none;
-    display: block;
+    padding: 15px;
+    transition: 0.3s;
+}
+.sidebar a:hover {
+    background: #007bff;
 }
 
-.sidebar ul li a:hover {
-    background-color: #495057;
-    color: #fff;
+/* Main content */
+.main-content {
+    margin-left: 220px;
+    padding: 30px;
 }
 
-
-/* Qualification & Timeline */
-#qualification, #experience {
-    padding: 50px 20px;
+/* Section titles */
+.section h2 {
+    text-align: center;
+    color: #007bff;
+    margin-bottom: 20px;
 }
 
-.timeline {
-    position: relative;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-.timeline-items {
+/* Hero */
+.hero {
+    min-height: 50vh;
     display: flex;
     align-items: center;
-    margin: 20px 0;
-    position: relative;
+    justify-content: center;
+    text-align: center;
+    background: linear-gradient(135deg,#e9f2ff,#f8f9fa);
+    margin-bottom: 30px;
+}
+.hero h1 {
+    font-size: 48px;
+}
+.btn-custom {
+    background: #007bff;
+    color: #fff;
+    padding: 10px 25px;
+    text-decoration: none;
+    border-radius: 5px;
+}
+.btn-custom:hover {
+    background: #0056b3;
 }
 
-.timeline-content h4 {
-    margin-bottom: 10px;
+/* Timeline */
+.timeline {
+    max-width: 900px;
+    margin: 0 auto;
+}
+.timeline-item {
+    background: #fff;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-left: 4px solid #007bff;
+    border-radius: 5px;
 }
 
-.timeline-content p {
-    color: #555;
+/* Skills */
+.skills-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+.skills-container .skill-card {
+    flex: 1 1 45%;
+    background: #fff;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+.progress {
+    background: #e0e0e0;
+    border-radius: 10px;
+    height: 20px;
+    margin-top: 5px;
+}
+.progress-bar {
+    background: #007bff;
+    height: 100%;
+    text-align: right;
+    padding-right: 5px;
+    color: #fff;
+    border-radius: 10px;
 }
 
-/* Contact Section Styling */
-#contact {
-    background: #f5f5f5;
-    color: #333;
-    padding: 60px 20px;
+/* Projects */
+.projects-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+.projects-container .project-card {
+    flex: 1 1 30%;
+    background: #fff;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 }
 
-.contact-details p {
-    margin-bottom: 10px;
-    line-height: 1.6;
+/* Lists (honours, hobbies, languages) */
+#honours-list li,
+#hobbies-list li,
+#languages-list li {
+    background: #e3f2fd;
+    padding: 10px;
+    margin-bottom: 8px;
+    border-radius: 6px;
 }
 
-.contact-details a {
+/* Contact */
+#contact-info p {
+    margin: 8px 0;
+}
+#contact-info a {
     color: #007bff;
     text-decoration: none;
-    transition: color 0.3s;
+}
+#contact-info a:hover {
+    color: #0056b3;
 }
 
-.contact-details a:hover {
-    color: #0056b3;
+/* Responsive */
+@media(max-width:768px){
+    .main-content { margin-left:0; padding:15px; }
+    .skills-container, .projects-container { flex-direction: column; }
 }
