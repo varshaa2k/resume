@@ -1,215 +1,62 @@
-/* General */
-html { scroll-behavior: smooth; }
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: #f1f5f9;
-    color: #333;
-    margin: 0;
-    padding: 0;
-    font-size: 1.1em;
+    font-family: Arial, sans-serif;
+}
+.card {
+    transition: transform 0.3s;
+}
+.card:hover {
+    transform: scale(1.05);
 }
 
-/* Sidebar */
-.sidebar {
-    position: fixed;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 240px;
-    background: #2c3e50;
-    color: #fff;
-    padding-top: 20px;
-    z-index: 1000;
-    transition: 0.3s;
+/* Progress Bar */
+.progress-bar {
+    transition: width 0.6s ease;
 }
-.sidebar a {
-    display: block;
-    color: #fff;
-    padding: 15px 25px;
-    font-size: 18px;
-    text-decoration: none;
+
+/* Qualification & Timeline */
+#qualification, #experience {
+    padding: 50px 20px;
 }
-.sidebar a:hover { background: #007bff; }
 
-/* Main content */
-.main-content { margin-left: 240px; padding: 40px; transition: 0.3s; }
+.timeline {
+    position: relative;
+    max-width: 1200px;
+    margin: 0 auto;
+}
 
-/* ===== Hero Section ===== */
-.hero {
-    min-height: 60vh;
-    color: #433f4a;
+.timeline-items {
     display: flex;
-    flex-direction: column;
     align-items: center;
-    justify-content: center;
-    text-align: center;
+    margin: 20px 0;
+    position: relative;
 }
-.hero h1 {
-    font-size: 2.8rem;
-    font-weight: 700;
+
+.timeline-content h4 {
     margin-bottom: 10px;
 }
-.hero h3 {
-    font-size: 1.2rem;
-    color: #007bff;
-    margin-bottom: 15px;
-}
-.hero p {
-    max-width: 800px;
-    line-height: 1.7;
-    color: #444;
-    font-size: 1.05rem;
-}
-.btn-custom {
-    background: #007bff;
-    color: #fff;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    margin-top: 15px;
-    transition: 0.3s;
-}
-.btn-custom:hover { background: #0056b3; }
 
-/* ===== About Section ===== */
-#about-description {
-    text-align: center;
-    margin-bottom: 30px;
-    line-height: 1.7;
-    font-size: 1.1rem;
+.timeline-content p {
+    color: #555;
+}
+
+/* Contact Section Styling */
+#contact {
+    background: #f5f5f5;
     color: #333;
+    padding: 60px 20px;
 }
 
-/* ===== Experience Section ===== */
-.experience-container {
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-}
-.experience-card {
-    display: flex;
-    flex-wrap: wrap;
-    background: #fff;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-    padding: 25px 30px;
-    transition: all 0.3s ease;
-}
-.experience-card:hover { transform: translateY(-5px); }
-.experience-left {
-    flex: 1;
-    min-width: 250px;
-    border-right: 3px solid #007bff;
-    padding-right: 20px;
-}
-.experience-right {
-    flex: 2;
-    min-width: 300px;
-    padding-left: 25px;
-}
-.experience-left h4 {
-    font-size: 1.2rem;
-    margin-bottom: 5px;
-    color: #007bff;
-}
-.experience-left p { margin: 0; font-weight: 500; }
-.experience-left span { font-size: 0.9rem; color: #666; }
-.experience-highlights { list-style: none; padding: 0; margin: 0; }
-.experience-highlights li {
-    position: relative;
-    padding-left: 25px;
+.contact-details p {
     margin-bottom: 10px;
-    font-size: 0.95rem;
-    color: #333;
+    line-height: 1.6;
 }
-.experience-highlights li::before {
-    content: "•";
-    position: absolute;
-    left: 8px;
+
+.contact-details a {
     color: #007bff;
+    text-decoration: none;
+    transition: color 0.3s;
 }
 
-/* ===== Qualification Section (Timeline Style) ===== */
-#qualification-list {
-    position: relative;
-    margin: 40px 0;
-    padding-left: 40px;
-}
-#qualification-list::before {
-    content: '';
-    position: absolute;
-    left: 18px;
-    top: 0;
-    width: 4px;
-    height: 100%;
-    background: #007bff;
-    border-radius: 4px;
-}
-.timeline-item {
-    position: relative;
-    margin-bottom: 40px;
-    background: #fff;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
-}
-.timeline-item::before {
-    content: '';
-    position: absolute;
-    left: -30px;
-    top: 20px;
-    width: 16px;
-    height: 16px;
-    background: #fff;
-    border: 4px solid #007bff;
-    border-radius: 50%;
-}
-.timeline-item h4 { color: #007bff; margin-bottom: 5px; }
-.timeline-item p, .timeline-item span {
-    margin: 0;
-    color: #444;
-    font-weight: 500;
-}
-.timeline-item span {
-    display: block;
-    font-size: 0.9rem;
-    color: #777;
-}
-
-/* ===== Honours / Hobbies / Languages ===== */
-#honours-list, #hobbies-list, #languages-list {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: grid;
-    gap: 10px;
-}
-#honours-list li, #hobbies-list li, #languages-list li {
-    background: #fff;
-    border-left: 5px solid #007bff;
-    padding: 10px 15px;
-    border-radius: 6px;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.05);
-    transition: transform 0.2s ease;
-}
-#honours-list li:hover, #hobbies-list li:hover, #languages-list li:hover {
-    transform: translateX(5px);
-}
-
-/* ===== Contact Section ===== */
-#contact-info p {
-    margin: 5px 0;
-    color: #333;
-}
-
-/* ===== Responsive ===== */
-@media (max-width:768px) {
-    .sidebar { width: 200px; left: -200px; }
-    .sidebar.active { left: 0; }
-    .main-content { margin-left: 0; padding: 20px; }
-    .experience-card { flex-direction: column; }
-    .experience-left { border-right: none; border-bottom: 2px solid #007bff; margin-bottom: 15px; padding-right: 0; }
-    .experience-right { padding-left: 0; }
-    #qualification-list::before { left: 12px; }
-    .timeline-item::before { left: -25px; }
+.contact-details a:hover {
+    color: #0056b3;
 }
