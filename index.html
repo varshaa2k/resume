@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Varshaa Portfolio</title>
-  <link rel="stylesheet" href="style.css">
-  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Varshaa Portfolio</title>
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
 
@@ -25,74 +25,75 @@
   </ul>
 </nav>
 
-<!-- Hero Section -->
-<section id="home" class="hero">
-  <div class="hero-content">
-    <h1 id="name"></h1>
+<!-- Main Content -->
+<main id="main-content">
+  <!-- Hero Section -->
+  <section id="home" class="hero">
+    <h1>Welcome, I'm <span id="name"></span></h1>
     <p id="tagline"></p>
     <p id="roles"></p>
-    <button class="btn btn-contact" onclick="scrollToContact()">Let's Connect</button>
-  </div>
-</section>
+    <button class="btn" onclick="scrollToContact()">Let's Connect</button>
+  </section>
 
-<!-- About Section -->
-<section id="about" class="section">
-  <h2>About Me</h2>
-  <p id="description_intro"></p>
-  <p id="description_details"></p>
-  <p id="cta"></p>
-  <a href="#contact" class="btn btn-primary">Contact Me</a>
-</section>
+  <!-- About Section -->
+  <section id="about" class="section">
+    <h2>About Me</h2>
+    <p id="description_intro"></p>
+    <p id="description_details"></p>
+    <p id="cta"></p>
+    <a id="resumeBtn" href="" download class="btn">Download Resume</a>
+  </section>
 
-<!-- Experience Section -->
-<section id="experience" class="section">
-  <h2>Experience</h2>
-  <div id="experience-list" class="timeline"></div>
-</section>
+  <!-- Experience Section -->
+  <section id="experience" class="section">
+    <h2>Experience</h2>
+    <div id="experience-container"></div>
+  </section>
 
-<!-- Education Section -->
-<section id="education" class="section">
-  <h2>Education</h2>
-  <div id="education-list" class="timeline"></div>
-</section>
+  <!-- Education Section -->
+  <section id="education" class="section">
+    <h2>Education</h2>
+    <div id="education-container"></div>
+  </section>
 
-<!-- Skills Section -->
-<section id="skills" class="section">
-  <h2>Skills</h2>
-  <div id="skills-list" class="skills-grid"></div>
-</section>
+  <!-- Skills Section -->
+  <section id="skills" class="section">
+    <h2>Skills</h2>
+    <div id="skills-container"></div>
+  </section>
 
-<!-- Projects Section -->
-<section id="projects" class="section">
-  <h2>Projects</h2>
-  <div id="projects-list" class="projects-grid"></div>
-</section>
+  <!-- Projects Section -->
+  <section id="projects" class="section">
+    <h2>Projects</h2>
+    <div id="projects-container"></div>
+  </section>
 
-<!-- Honours Section -->
-<section id="honours" class="section">
-  <h2>Honours & Awards</h2>
-  <div id="honours-list" class="honours-grid"></div>
-</section>
+  <!-- Honours & Awards -->
+  <section id="honours" class="section">
+    <h2>Honours & Awards</h2>
+    <ul id="honours-container"></ul>
+  </section>
 
-<!-- Hobbies Section -->
-<section id="hobbies" class="section">
-  <h2>Hobbies</h2>
-  <div id="hobbies-list" class="hobbies-grid"></div>
-</section>
+  <!-- Hobbies -->
+  <section id="hobbies" class="section">
+    <h2>Hobbies</h2>
+    <ul id="hobbies-container"></ul>
+  </section>
 
-<!-- Languages Section -->
-<section id="languages" class="section">
-  <h2>Languages</h2>
-  <div id="languages-list" class="languages-vertical"></div>
-</section>
+  <!-- Languages -->
+  <section id="languages" class="section">
+    <h2>Languages</h2>
+    <ul id="languages-container"></ul>
+  </section>
 
-<!-- Contact Section -->
-<section id="contact" class="section contact">
-  <h2>Contact Me</h2>
-  <p><strong>Email:</strong> <a id="email" href=""></a></p>
-  <p><strong>Phone:</strong> <a id="phone" href=""></a></p>
-  <p><strong>Location:</strong> <span id="location"></span></p>
-</section>
+  <!-- Contact Section -->
+  <section id="contact" class="section">
+    <h2>Contact Me</h2>
+    <p>Email: <span id="email"></span></p>
+    <p>Phone: <span id="phone"></span></p>
+    <p>Location: <span id="location"></span></p>
+  </section>
+</main>
 
 <script src="script.js"></script>
 </body>
