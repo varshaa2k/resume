@@ -1,91 +1,89 @@
-fetch("data.json")
-    .then(response => response.json())
-    .then(data => {
-        // Hero
-        document.getElementById("hero-name").textContent = data.about.name;
-        document.getElementById("hero-tagline").textContent = data.about.tagline;
-        document.getElementById("hero-roles").textContent = data.about.roles.join(" | ");
+fetch('data.json')
+  .then(response => response.json())
+  .then(data => {
+    // About
+    document.getElementById('name').textContent = data.about.name;
+    document.getElementById('tagline').textContent = data.about.tagline;
+    document.getElementById('roles').textContent = data.about.roles.join(" | ");
+    document.getElementById('description_intro').innerHTML = data.about.description_intro;
+    document.getElementById('description_details').innerHTML = data.about.description_details;
+    document.getElementById('cta').innerHTML = data.about.cta;
 
-        // About
-        document.getElementById("about-intro").innerHTML = data.about.description_intro;
-        document.getElementById("about-details").textContent = data.about.description_details;
-        document.getElementById("about-cta").innerHTML = data.about.cta;
+    // Contact
+    document.getElementById('email').textContent = data.about.email;
+    document.getElementById('email').href = "mailto:" + data.about.email;
+    document.getElementById('phone').textContent = data.about.phone;
+    document.getElementById('phone').href = "tel:" + data.about.phone;
+    document.getElementById('location').textContent = data.about.location;
 
-        // Experience
-        const expList = document.getElementById("experience-list");
-        data.experience.milestones.forEach(exp => {
-            const div = document.createElement("div");
-            div.classList.add("card");
-            div.innerHTML = `<h4>${exp.role}</h4><p>${exp.company}</p><span>${exp.duration}</span>`;
-            expList.appendChild(div);
-        });
+    // Experience
+    let expContainer = document.getElementById('experience-list');
+    data.experience.milestones.forEach(item => {
+      let div = document.createElement('div');
+      div.className = 'timeline-item';
+      div.innerHTML = `<h4>${item.role}</h4><p>${item.company}</p><span>${item.duration}</span>`;
+      expContainer.appendChild(div);
+    });
 
-        // Education
-        const eduList = document.getElementById("education-list");
-        data.education.forEach(edu => {
-            const div = document.createElement("div");
-            div.classList.add("card");
-            div.innerHTML = `<h4>${edu.degree}</h4><p>${edu.university}</p><span>${edu.year}</span>`;
-            eduList.appendChild(div);
-        });
+    // Education
+    let eduContainer = document.getElementById('education-list');
+    data.education.forEach(item => {
+      let div = document.createElement('div');
+      div.className = 'timeline-item';
+      div.innerHTML = `<h4>${item.degree}</h4><p>${item.university}</p><span>${item.year}</span>`;
+      eduContainer.appendChild(div);
+    });
 
-        // Skills
-        const skillsList = document.getElementById("skills-list");
-        data.skills.forEach(skill => {
-            const div = document.createElement("div");
-            div.classList.add("card");
-            div.innerHTML = `
-                <h4>${skill.name}</h4>
-                <p>${skill.description}</p>
-                <div class="progress">
-                    <div class="progress-bar" style="width:${skill.progress}%">${skill.progress}%</div>
-                </div>
-            `;
-            skillsList.appendChild(div);
-        });
+    // Skills
+    let skillsContainer = document.getElementById('skills-list');
+    data.skills.forEach(skill => {
+      let div = document.createElement('div');
+      div.className = 'card';
+      div.innerHTML = `<h4>${skill.name}</h4><p>${skill.description}</p>
+        <div class="progress"><div class="progress-bar" style="width:${skill.progress}%">${skill.progress}%</div></div>`;
+      skillsContainer.appendChild(div);
+    });
 
-        // Projects
-        const projectsList = document.getElementById("projects-list");
-        data.projects.forEach(project => {
-            const div = document.createElement("div");
-            div.classList.add("card");
-            div.innerHTML = `
-                <h4>${project.title}</h4>
-                <p>${project.description}</p>
-                <a href="${project.github}" target="_blank">GitHub</a>
-                ${project.demo ? `<a href="${project.demo}" target="_blank">Demo</a>` : ""}
-            `;
-            projectsList.appendChild(div);
-        });
+    // Projects
+    let projectsContainer = document.getElementById('projects-list');
+    data.projects.forEach(project => {
+      let techBadges = project.tech.map(t => `<span class="badge">${t}</span>`).join(" ");
+      let demoButton = project.demo ? `<a href="${project.demo}" target="_blank" class="btn btn-demo">Demo</a>` : '';
+      let div = document.createElement('div');
+      div.className = 'card';
+      div.innerHTML = `<h4>${project.title}</h4><p>${project.description}</p>
+        <p>${techBadges}</p>
+        <a href="${project.github}" target="_blank" class="btn btn-github">GitHub</a> ${demoButton}`;
+      projectsContainer.appendChild(div);
+    });
 
-        // Honours
-        const honoursList = document.getElementById("honours-list");
-        data.honours.forEach(h => {
-            const li = document.createElement("li");
-            li.textContent = h;
-            honoursList.appendChild(li);
-        });
+    // Honours
+    let honoursContainer = document.getElementById('honours-list');
+    data.honours.forEach(h => {
+      let li = document.createElement('li');
+      li.textContent = h;
+      honoursContainer.appendChild(li);
+    });
 
-        // Hobbies
-        const hobbiesList = document.getElementById("hobbies-list");
-        data.hobbies.forEach(hobby => {
-            const li = document.createElement("li");
-            li.textContent = hobby;
-            hobbiesList.appendChild(li);
-        });
+    // Hobbies
+    let hobbiesContainer = document.getElementById('hobbies-list');
+    data.hobbies.forEach(h => {
+      let li = document.createElement('li');
+      li.textContent = h;
+      hobbiesContainer.appendChild(li);
+    });
 
-        // Languages
-        const languagesList = document.getElementById("languages-list");
-        data.languages.forEach(lang => {
-            const li = document.createElement("li");
-            li.textContent = `${lang.language} - ${lang.proficiency}`;
-            languagesList.appendChild(li);
-        });
+    // Languages
+    let languagesContainer = document.getElementById('languages-list');
+    data.languages.forEach(lang => {
+      let div = document.createElement('div');
+      div.className = 'language-card';
+      div.innerHTML = `<strong>${lang.language}</strong><br>${lang.proficiency}`;
+      languagesContainer.appendChild(div);
+    });
+  })
+  .catch(error => console.error("Error loading data.json:", error));
 
-        // Contact
-        document.getElementById("contact-email").textContent = data.about.email;
-        document.getElementById("contact-phone").textContent = data.about.phone;
-        document.getElementById("contact-location").textContent = data.about.location;
-
-    })
-    .catch(err => console.error("Error loading data.json:", err));
+function scrollToContact() {
+  document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });
+}
