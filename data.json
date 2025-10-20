@@ -10,8 +10,7 @@
     "cta": "<strong>Looking for someone to drive impactful projects?</strong>",
     "email": "veeravarsha2k@gmail.com",
     "phone": "+919080469375",
-    "location": "Chennai, India",
-    "resume": "resume.pdf"
+    "location": "Chennai, India"
   },
   "experience": {
     "milestones": [
@@ -19,7 +18,7 @@
         "role": "Senior Software Development Analyst",
         "company": "Accenture",
         "duration": "Oct 2024 - Present",
-        "points": [
+        "details": [
           "Designed and developed end-to-end data pipelines using Python, pandas, and SQL for enterprise-scale analytics.",
           "Implemented data quality and governance frameworks ensuring consistency and audit readiness across multiple data sources.",
           "Built and deployed Flask-based microservices integrated with MongoDB and GCP Cloud Functions for data control automation.",
@@ -31,12 +30,11 @@
         "role": "Software Engineer",
         "company": "Cognizant",
         "duration": "Jul 2021 - Sep 2024",
-        "points": [
+        "details": [
           "Developed scalable ETL pipelines using Python, SQL, and Airflow to integrate diverse data sources.",
           "Designed data models and validation workflows to support regulatory reporting and compliance analytics.",
           "Automated data ingestion and processing tasks, reducing manual effort by over 40%.",
-          "Built interactive dashboards for data quality monitoring and performance tracking.",
-          "Contributed to ML-based detection using Decision Tree."
+          "Built interactive dashboards for data quality monitoring and performance tracking."
         ]
       }
     ]
@@ -64,13 +62,15 @@
       "title": "Diabetes Detection",
       "description": "AI model for early-stage Diabetes detection using image processing and deep learning.",
       "tech": ["Computer Vision", "TensorFlow", "OpenCV", "Flask"],
-      "github": "https://github.com/varshaa2k/Diabetes_Detector"
+      "github": "https://github.com/varshaa2k/Diabetes_Detector",
+      "demo": ""
     },
     {
       "title": "GEN AI - GROQ ChatBot",
       "description": "AI Chat App leveraging Groq hardware acceleration and OpenAI GPT-OSS-20B model for fast intelligent responses",
       "tech": ["GEN AI", "LLM", "Streamlit"],
-      "github": "https://github.com/varshaa2k/GROQChatBot"
+      "github": "https://github.com/varshaa2k/GROQChatBot",
+      "demo": ""
     }
   ],
   "honours": [
@@ -82,8 +82,8 @@
   ],
   "hobbies": ["Badminton", "Reading", "Painting", "AI Research"],
   "languages": [
-    { "language": "English", "proficiency": "Fluent(Read, write, speak)" },
-    { "language": "Tamil", "proficiency": "Native (Read, write, speak)" },
-    { "language": "Hindi", "proficiency": "Read Only" }
+    {"language": "English", "proficiency": "Fluent (Read, write, speak)"},
+    {"language": "Tamil", "proficiency": "Native (read, write, speak)"},
+    {"language": "Hindi", "proficiency": "Read Only"}
   ]
 }
