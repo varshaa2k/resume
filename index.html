@@ -1,97 +1,95 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Varshaa - Portfolio</title>
-  <link rel="stylesheet" href="style.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Varshaa Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <script defer src="script.js"></script>
 </head>
 <body>
+    <!-- Sidebar -->
+    <nav id="sidebar">
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#education">Education</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#honours">Honours</a></li>
+            <li><a href="#hobbies">Hobbies</a></li>
+            <li><a href="#languages">Languages</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
 
-<!-- Sidebar -->
-<div class="sidebar">
-  <a href="#home">Home</a>
-  <a href="#about">About</a>
-  <a href="#experience">Experience</a>
-  <a href="#qualification">Qualification</a>
-  <a href="#skills">Skills</a>
-  <a href="#projects">Projects</a>
-  <a href="#honours">Honours</a>
-  <a href="#hobbies">Hobbies</a>
-  <a href="#languages">Languages</a>
-  <a href="#contact">Contact</a>
-</div>
+    <div class="main-content">
+        <!-- Home / Hero Section -->
+        <section id="home" class="hero">
+            <h1 id="hero-name"></h1>
+            <p id="hero-tagline"></p>
+            <p id="hero-roles"></p>
+            <a href="#contact" class="btn">Contact Me</a>
+        </section>
 
-<!-- Main Content -->
-<div class="main-content">
+        <!-- About Section -->
+        <section id="about">
+            <h2>About Me</h2>
+            <p id="about-intro"></p>
+            <p id="about-details"></p>
+            <p id="about-cta"></p>
+        </section>
 
-  <!-- Hero Section -->
-  <section id="home" class="hero">
-    <div>
-      <h1></h1>
-      <p class="emoji"></p>
-      <p class="tagline"></p>
-      <p class="title"></p>
-      <a href="#contact" class="btn btn-custom btn-lg">Contact Me</a>
+        <!-- Experience Section -->
+        <section id="experience">
+            <h2>Experience</h2>
+            <div id="experience-list"></div>
+        </section>
+
+        <!-- Education Section -->
+        <section id="education">
+            <h2>Education</h2>
+            <div id="education-list"></div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills">
+            <h2>Skills</h2>
+            <div id="skills-list"></div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects">
+            <h2>Projects</h2>
+            <div id="projects-list"></div>
+        </section>
+
+        <!-- Honours Section -->
+        <section id="honours">
+            <h2>Honours & Awards</h2>
+            <ul id="honours-list"></ul>
+        </section>
+
+        <!-- Hobbies Section -->
+        <section id="hobbies">
+            <h2>Hobbies</h2>
+            <ul id="hobbies-list"></ul>
+        </section>
+
+        <!-- Languages Section -->
+        <section id="languages">
+            <h2>Languages</h2>
+            <ul id="languages-list"></ul>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact">
+            <h2>Contact Me</h2>
+            <p>Email: <span id="contact-email"></span></p>
+            <p>Phone: <span id="contact-phone"></span></p>
+            <p>Location: <span id="contact-location"></span></p>
+        </section>
     </div>
-  </section>
-
-  <!-- About Section -->
-  <section id="about" class="section">
-    <h2>About Me</h2>
-    <p id="about-description"></p>
-  </section>
-
-  <!-- Experience Section -->
-  <section id="experience" class="section">
-    <h2>Experience</h2>
-    <div id="experience-list" class="timeline"></div>
-  </section>
-
-  <!-- Qualification Section -->
-  <section id="qualification" class="section">
-    <h2>Qualification</h2>
-    <div id="qualification-list" class="timeline"></div>
-  </section>
-
-  <!-- Skills Section -->
-  <section id="skills" class="section">
-    <h2>Skills</h2>
-    <div id="skills-container" class="skills-container"></div>
-  </section>
-
-  <!-- Projects Section -->
-  <section id="projects" class="section">
-    <h2>Projects</h2>
-    <div id="projects-container" class="projects-container"></div>
-  </section>
-
-  <!-- Honours / Awards / Scholarships -->
-  <section id="honours" class="section">
-    <h2>Honours, Awards & Scholarships</h2>
-    <ul id="honours-list"></ul>
-  </section>
-
-  <!-- Hobbies Section -->
-  <section id="hobbies" class="section">
-    <h2>Hobbies</h2>
-    <ul id="hobbies-list"></ul>
-  </section>
-
-  <!-- Languages Section -->
-  <section id="languages" class="section">
-    <h2>Languages</h2>
-    <ul id="languages-list"></ul>
-  </section>
-
-  <!-- Contact Section -->
-  <section id="contact" class="section">
-    <h2>Contact</h2>
-    <div id="contact-info"></div>
-  </section>
-
-</div>
-
-<script src="script.js"></script>
 </body>
 </html>
