@@ -3,7 +3,7 @@ document.getElementById('menu-toggle').addEventListener('click', () => {
 });
 
 // Load JSON
-fetch('data.json')
+fetch('data.json?v=' + new Date().getTime())  // added cache-busting
     .then(res => res.json())
     .then(data => {
 
@@ -113,5 +113,5 @@ fetch('data.json')
             <p><strong>LinkedIn:</strong> <a href="${data.about.linkedin}" target="_blank">${data.about.linkedin}</a></p>
             <p><strong>GitHub:</strong> <a href="${data.about.github}" target="_blank">${data.about.github}</a></p>
         `;
-    });
-    .catch(err => console.error("Error loading data:", err));
+    })
+    .catch(err => console.error("Error loading data:", err));  // ✅ moved inside chain
