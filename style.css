@@ -18,10 +18,13 @@ body {
   height: 100%;
   box-shadow: 2px 0 10px rgba(0,0,0,0.1);
   transition: all 0.3s;
+  z-index: 100;
 }
 #sidebar ul li a {
   padding: 12px 20px;
   border-radius: 8px;
+  display: block;
+  font-weight: 500;
 }
 #sidebar ul li a:hover {
   background-color: #4e4e6e;
@@ -34,7 +37,6 @@ body {
   padding: 40px;
   max-width: 1200px;
   margin-right: auto;
-  margin-left: auto;
 }
 
 /* Hero Section */
@@ -43,13 +45,13 @@ body {
   margin-bottom: 60px;
 }
 .hero h1 {
-  font-size: 3.5rem;
+  font-size: 3rem;
   font-weight: 700;
   margin-bottom: 10px;
   color: #2c3e50;
 }
 .hero .tagline {
-  font-size: 1.5rem;
+  font-size: 1.3rem;
   color: #3498db;
   margin-bottom: 10px;
 }
@@ -74,14 +76,14 @@ body {
 section h2 {
   text-align: center;
   margin-bottom: 40px;
-  font-size: 2.2rem;
+  font-size: 2rem;
   color: #2c3e50;
   position: relative;
 }
 section h2::after {
   content: '';
   display: block;
-  width: 80px;
+  width: 60px;
   height: 3px;
   background: #3498db;
   margin: 10px auto 0 auto;
@@ -182,6 +184,24 @@ section h2::after {
   color: #555;
 }
 
+/* Tag-style Cards for Languages, Hobbies, Honours */
+.tag-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: center;
+}
+.tag {
+  background-color: #3498db;
+  color: #fff;
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-size: 0.95rem;
+  font-weight: 500;
+  transition: background 0.3s;
+}
+.tag:hover { background-color: #2980b9; }
+
 /* Contact Section */
 #contact {
   text-align: center;
@@ -209,4 +229,8 @@ section h2::after {
   #main-content { padding: 15px; }
   .timeline { padding-left: 20px; }
   .card-container, .card-list-container { grid-template-columns: 1fr; }
+  .hero h1 { font-size: 2.5rem; }
+  .hero .tagline { font-size: 1.1rem; }
+  .hero .roles { font-size: 0.95rem; }
+  #lets-connect, .btn-resume { width: 90%; padding: 12px 0; margin: 8px 0; }
 }
