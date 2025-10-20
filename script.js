@@ -1,87 +1,102 @@
-fetch('data.json')
-  .then(response => response.json())
-  .then(data => {
-    // About
-    document.getElementById('name').textContent = data.about.name;
-    document.getElementById('tagline').textContent = data.about.tagline;
-    document.getElementById('roles').textContent = data.about.roles.join(" | ");
-    document.getElementById('description_intro').innerHTML = data.about.description_intro;
-    document.getElementById('description_details').textContent = data.about.description_details;
-    document.getElementById('cta').innerHTML = data.about.cta;
-    document.getElementById('email').textContent = data.about.email;
-    document.getElementById('phone').textContent = data.about.phone;
-    document.getElementById('location').textContent = data.about.location;
-    document.getElementById('resumeBtn').href = data.about.resume;
+document.addEventListener('DOMContentLoaded', () => {
 
-    // Experience
-    const expContainer = document.getElementById('experience-container');
-    data.experience.milestones.forEach(exp => {
-      const div = document.createElement('div');
-      div.classList.add('experience-item');
-      div.innerHTML = `<h3>${exp.role} - ${exp.company}</h3><p>${exp.duration}</p><ul>${exp.points.map(p => `<li>${p}</li>`).join('')}</ul>`;
-      expContainer.appendChild(div);
+    const sidebarToggle = document.getElementById('sidebarToggle');
+    const sidebar = document.getElementById('sidebar');
+
+    sidebarToggle.addEventListener('click', () => {
+        sidebar.classList.toggle('active');
     });
 
-    // Education
-    const eduContainer = document.getElementById('education-container');
-    data.education.forEach(ed => {
-      const div = document.createElement('div');
-      div.classList.add('education-item');
-      div.innerHTML = `<h3>${ed.degree}</h3><p>${ed.university}</p><span>${ed.year}</span>`;
-      eduContainer.appendChild(div);
-    });
+    // Load JSON data
+    fetch('data.json')
+        .then(response => response.json())
+        .then(data => {
+            loadExperience(data.experience.milestones);
+            loadEducation(data.education);
+            loadSkills(data.skills);
+            loadProjects(data.projects);
+            loadHonours(data.honours);
+            loadHobbies(data.hobbies);
+            loadLanguages(data.languages);
+        })
+        .catch(err => console.error('Error loading data.json:', err));
 
-    // Skills
-    const skillsContainer = document.getElementById('skills-container');
-    data.skills.forEach(skill => {
-      const div = document.createElement('div');
-      div.classList.add('skill');
-      div.innerHTML = `<div class="skill-name">${skill.name}</div>
-                       <div class="progress"><div class="progress-bar" style="width:${skill.progress}%">${skill.progress}%</div></div>
-                       <p>${skill.description}</p>`;
-      skillsContainer.appendChild(div);
-    });
+    // Scroll to section
+    window.scrollToSection = (id) => {
+        document.getElementById(id).scrollIntoView({behavior: "smooth"});
+    }
 
-    // Projects
-    const projectsContainer = document.getElementById('projects-container');
-    data.projects.forEach(proj => {
-      const div = document.createElement('div');
-      div.classList.add('project');
-      div.innerHTML = `<h3>${proj.title}</h3>
-                       <p>${proj.description}</p>
-                       <div>${proj.tech.map(t => `<span class="tech-badge">${t}</span>`).join('')}</div>
-                       <a href="${proj.github}" target="_blank">GitHub</a>
-                       ${proj.demo ? `<a href="${proj.demo}" target="_blank">Demo</a>` : ''}`;
-      projectsContainer.appendChild(div);
-    });
+    function loadExperience(exp) {
+        const container = document.getElementById('experience-container');
+        exp.forEach(e => {
+            const div = document.createElement('div');
+            div.classList.add('timeline-item');
+            div.innerHTML = `<h4>${e.role}</h4><p>${e.company}</p><span>${e.duration}</span>`;
+            container.appendChild(div);
+        });
+    }
 
-    // Honours
-    const honoursContainer = document.getElementById('honours-container');
-    data.honours.forEach(h => {
-      const li = document.createElement('li');
-      li.textContent = h;
-      honoursContainer.appendChild(li);
-    });
+    function loadEducation(edu) {
+        const container = document.getElementById('education-container');
+        edu.forEach(e => {
+            const div = document.createElement('div');
+            div.classList.add('timeline-item');
+            div.innerHTML = `<h4>${e.degree}</h4><p>${e.university}</p><span>${e.year}</span>`;
+            container.appendChild(div);
+        });
+    }
 
-    // Hobbies
-    const hobbiesContainer = document.getElementById('hobbies-container');
-    data.hobbies.forEach(h => {
-      const li = document.createElement('li');
-      li.textContent = h;
-      hobbiesContainer.appendChild(li);
-    });
+    function loadSkills(skills) {
+        const container = document.getElementById('skills-container');
+        skills.forEach(s => {
+            const div = document.createElement('div');
+            div.classList.add('skill-card');
+            div.innerHTML = `<h4>${s.name}</h4><p>${s.description}</p><div class="progress-bar" style="width:${s.progress}%">${s.progress}%</div>`;
+            container.appendChild(div);
+        });
+    }
 
-    // Languages
-    const languagesContainer = document.getElementById('languages-container');
-    data.languages.forEach(l => {
-      const li = document.createElement('li');
-      li.textContent = `${l.language} - ${l.proficiency}`;
-      languagesContainer.appendChild(li);
-    });
+    function loadProjects(projects) {
+        const container = document.getElementById('projects-container');
+        projects.forEach(p => {
+            const div = document.createElement('div');
+            div.classList.add('project-card');
+            const techHtml = p.tech ? p.tech.map(t => `<span>${t}</span>`).join('') : '';
+            div.innerHTML = `
+                <h4>${p.title}</h4>
+                <p>${p.description}</p>
+                <div class="tech-list">${techHtml}</div>
+                <a href="${p.github}" target="_blank" class="btn btn-primary">GitHub</a>
+                ${p.demo ? `<a href="${p.demo}" target="_blank" class="btn btn-outline-success">Demo</a>` : ''}
+            `;
+            container.appendChild(div);
+        });
+    }
 
-  })
-  .catch(error => console.error('Error loading data.json:', error));
+    function loadHonours(honours){
+        const container = document.getElementById('honours-list');
+        honours.forEach(h => {
+            const li = document.createElement('li');
+            li.textContent = h;
+            container.appendChild(li);
+        });
+    }
 
-function scrollToContact() {
-  document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });
-}
+    function loadHobbies(hobbies){
+        const container = document.getElementById('hobbies-list');
+        hobbies.forEach(h => {
+            const li = document.createElement('li');
+            li.textContent = h;
+            container.appendChild(li);
+        });
+    }
+
+    function loadLanguages(langs){
+        const container = document.getElementById('languages-list');
+        langs.forEach(l => {
+            const div = document.createElement('div');
+            div.textContent = `${l.language} - ${l.proficiency}`;
+            container.appendChild(div);
+        });
+    }
+});
