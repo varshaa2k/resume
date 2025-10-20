@@ -6,86 +6,81 @@ fetch('data.json')
     document.getElementById('tagline').textContent = data.about.tagline;
     document.getElementById('roles').textContent = data.about.roles.join(" | ");
     document.getElementById('description_intro').innerHTML = data.about.description_intro;
-    document.getElementById('description_details').innerHTML = data.about.description_details;
+    document.getElementById('description_details').textContent = data.about.description_details;
     document.getElementById('cta').innerHTML = data.about.cta;
-
-    // Contact
     document.getElementById('email').textContent = data.about.email;
-    document.getElementById('email').href = "mailto:" + data.about.email;
     document.getElementById('phone').textContent = data.about.phone;
-    document.getElementById('phone').href = "tel:" + data.about.phone;
     document.getElementById('location').textContent = data.about.location;
+    document.getElementById('resumeBtn').href = data.about.resume;
 
     // Experience
-    let expContainer = document.getElementById('experience-list');
-    data.experience.milestones.forEach(item => {
-      let div = document.createElement('div');
-      div.className = 'timeline-item';
-      let bulletPoints = item.details ? '<ul>' + item.details.map(d => `<li>${d}</li>`).join('') + '</ul>' : '';
-      div.innerHTML = `<h4>${item.role}</h4><p>${item.company}</p><span>${item.duration}</span>${bulletPoints}`;
+    const expContainer = document.getElementById('experience-container');
+    data.experience.milestones.forEach(exp => {
+      const div = document.createElement('div');
+      div.classList.add('experience-item');
+      div.innerHTML = `<h3>${exp.role} - ${exp.company}</h3><p>${exp.duration}</p><ul>${exp.points.map(p => `<li>${p}</li>`).join('')}</ul>`;
       expContainer.appendChild(div);
     });
 
     // Education
-    let eduContainer = document.getElementById('education-list');
-    data.education.forEach(item => {
-      let div = document.createElement('div');
-      div.className = 'timeline-item';
-      div.innerHTML = `<h4>${item.degree}</h4><p>${item.university}</p><span>${item.year}</span>`;
+    const eduContainer = document.getElementById('education-container');
+    data.education.forEach(ed => {
+      const div = document.createElement('div');
+      div.classList.add('education-item');
+      div.innerHTML = `<h3>${ed.degree}</h3><p>${ed.university}</p><span>${ed.year}</span>`;
       eduContainer.appendChild(div);
     });
 
     // Skills
-    let skillsContainer = document.getElementById('skills-list');
+    const skillsContainer = document.getElementById('skills-container');
     data.skills.forEach(skill => {
-      let div = document.createElement('div');
-      div.className = 'card';
-      div.innerHTML = `<h4>${skill.name}</h4><p>${skill.description}</p>
-        <div class="progress"><div class="progress-bar" style="width:${skill.progress}%">${skill.progress}%</div></div>`;
+      const div = document.createElement('div');
+      div.classList.add('skill');
+      div.innerHTML = `<div class="skill-name">${skill.name}</div>
+                       <div class="progress"><div class="progress-bar" style="width:${skill.progress}%">${skill.progress}%</div></div>
+                       <p>${skill.description}</p>`;
       skillsContainer.appendChild(div);
     });
 
     // Projects
-    let projectsContainer = document.getElementById('projects-list');
-    data.projects.forEach(project => {
-      let techBadges = project.tech.map(t => `<span class="badge">${t}</span>`).join(" ");
-      let demoButton = project.demo ? `<a href="${project.demo}" target="_blank" class="btn-demo">Demo</a>` : '';
-      let div = document.createElement('div');
-      div.className = 'card';
-      div.innerHTML = `<h4>${project.title}</h4><p>${project.description}</p>
-        <p>${techBadges}</p>
-        <a href="${project.github}" target="_blank" class="btn-github">GitHub</a> ${demoButton}`;
+    const projectsContainer = document.getElementById('projects-container');
+    data.projects.forEach(proj => {
+      const div = document.createElement('div');
+      div.classList.add('project');
+      div.innerHTML = `<h3>${proj.title}</h3>
+                       <p>${proj.description}</p>
+                       <div>${proj.tech.map(t => `<span class="tech-badge">${t}</span>`).join('')}</div>
+                       <a href="${proj.github}" target="_blank">GitHub</a>
+                       ${proj.demo ? `<a href="${proj.demo}" target="_blank">Demo</a>` : ''}`;
       projectsContainer.appendChild(div);
     });
 
     // Honours
-    let honoursContainer = document.getElementById('honours-list');
+    const honoursContainer = document.getElementById('honours-container');
     data.honours.forEach(h => {
-      let div = document.createElement('div');
-      div.className = 'honour-item';
-      div.textContent = h;
-      honoursContainer.appendChild(div);
+      const li = document.createElement('li');
+      li.textContent = h;
+      honoursContainer.appendChild(li);
     });
 
     // Hobbies
-    let hobbiesContainer = document.getElementById('hobbies-list');
+    const hobbiesContainer = document.getElementById('hobbies-container');
     data.hobbies.forEach(h => {
-      let div = document.createElement('div');
-      div.className = 'hobby-item';
-      div.textContent = h;
-      hobbiesContainer.appendChild(div);
+      const li = document.createElement('li');
+      li.textContent = h;
+      hobbiesContainer.appendChild(li);
     });
 
     // Languages
-    let languagesContainer = document.getElementById('languages-list');
-    data.languages.forEach(lang => {
-      let div = document.createElement('div');
-      div.className = 'language-card';
-      div.innerHTML = `<strong>${lang.language}</strong><br>${lang.proficiency}`;
-      languagesContainer.appendChild(div);
+    const languagesContainer = document.getElementById('languages-container');
+    data.languages.forEach(l => {
+      const li = document.createElement('li');
+      li.textContent = `${l.language} - ${l.proficiency}`;
+      languagesContainer.appendChild(li);
     });
+
   })
-  .catch(error => console.error("Error loading data.json:", error));
+  .catch(error => console.error('Error loading data.json:', error));
 
 function scrollToContact() {
   document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });
