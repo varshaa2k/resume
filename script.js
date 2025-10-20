@@ -1,22 +1,21 @@
-// Sidebar toggle for mobile
-const menuToggle = document.getElementById('menu-toggle');
-const sidebar = document.getElementById('sidebar');
-menuToggle.addEventListener('click', () => sidebar.classList.toggle('active'));
+document.getElementById('menu-toggle').addEventListener('click', () => {
+    document.getElementById('sidebar').classList.toggle('active');
+});
 
-// Load JSON data dynamically
+// Load JSON
 fetch('data.json')
     .then(res => res.json())
     .then(data => {
 
-        // ===== Hero Section =====
+        // Hero
         document.getElementById('hero-name').textContent = `Welcome, I'm ${data.about.name}`;
         document.getElementById('hero-desc').textContent = data.about.title;
 
-        // ===== About =====
+        // About
         document.getElementById('about-description').textContent = data.about.description;
 
-        // ===== Experience Section (Two-column Layout) =====
-        const experienceList = document.getElementById('experience-list');
+        // Experience
+        const expContainer = document.getElementById('experience-list');
         data.experience.milestones.forEach(exp => {
             const card = document.createElement('div');
             card.className = 'experience-card';
@@ -32,10 +31,10 @@ fetch('data.json')
                     </ul>
                 </div>
             `;
-            experienceList.appendChild(card);
+            expContainer.appendChild(card);
         });
 
-        // ===== Qualification =====
+        // Qualification
         const qualList = document.getElementById('qualification-list');
         data.education.forEach(edu => {
             const div = document.createElement('div');
@@ -44,26 +43,27 @@ fetch('data.json')
                 <h4>${edu.degree}</h4>
                 <p>${edu.university}</p>
                 <span>${edu.year}</span>
+                ${edu.details ? `<p>${edu.details}</p>` : ''}
             `;
             qualList.appendChild(div);
         });
 
-        // ===== Skills =====
+        // Skills
         const skillsContainer = document.getElementById('skills-container');
         data.skills.forEach(skill => {
-            const skillDiv = document.createElement('div');
-            skillDiv.className = 'col-12 col-md-6 mb-4';
-            skillDiv.innerHTML = `
+            const div = document.createElement('div');
+            div.className = 'col-12 col-md-6 mb-4';
+            div.innerHTML = `
                 <h4>${skill.name}</h4>
                 <p>${skill.description}</p>
                 <div class="progress">
                     <div class="progress-bar bg-info" style="width:${skill.progress}%">${skill.progress}%</div>
                 </div>
             `;
-            skillsContainer.appendChild(skillDiv);
+            skillsContainer.appendChild(div);
         });
 
-        // ===== Projects =====
+        // Projects
         const projectsContainer = document.getElementById('projects-container');
         data.projects.forEach(project => {
             const div = document.createElement('div');
@@ -80,7 +80,31 @@ fetch('data.json')
             projectsContainer.appendChild(div);
         });
 
-        // ===== Contact =====
+        // Honours
+        const honoursList = document.getElementById('honours-list');
+        data.honours.forEach(item => {
+            const li = document.createElement('li');
+            li.textContent = item;
+            honoursList.appendChild(li);
+        });
+
+        // Hobbies
+        const hobbiesList = document.getElementById('hobbies-list');
+        data.hobbies.forEach(hobby => {
+            const li = document.createElement('li');
+            li.textContent = hobby;
+            hobbiesList.appendChild(li);
+        });
+
+        // Languages
+        const langList = document.getElementById('languages-list');
+        data.languages.forEach(lang => {
+            const li = document.createElement('li');
+            li.textContent = `${lang.language} - ${lang.proficiency}`;
+            langList.appendChild(li);
+        });
+
+        // Contact
         const contactInfo = document.getElementById('contact-info');
         contactInfo.innerHTML = `
             <p><strong>Email:</strong> <a href="mailto:${data.about.email}">${data.about.email}</a></p>
@@ -89,5 +113,5 @@ fetch('data.json')
             <p><strong>LinkedIn:</strong> <a href="${data.about.linkedin}" target="_blank">${data.about.linkedin}</a></p>
             <p><strong>GitHub:</strong> <a href="${data.about.github}" target="_blank">${data.about.github}</a></p>
         `;
-    })
+    });
     .catch(err => console.error("Error loading data:", err));
