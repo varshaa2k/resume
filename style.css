@@ -1,366 +1,233 @@
-/* =======================
-   General Styles
-======================= */
-html {
-    scroll-behavior: smooth;
-}
-
+/* ===== Base Layout ===== */
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: #f1f5f9;
-    color: #333;
-    margin: 0;
-    padding: 0;
-    font-size: 1.1em;
+  font-family: "Poppins", sans-serif;
+  background-color: #f7f8fa;
+  margin: 0;
+  display: flex;
+  color: #222;
 }
 
-/* =======================
-   Sidebar
-======================= */
+h1, h2, h3, h4 {
+  margin: 0;
+}
+
+.section {
+  margin-bottom: 50px;
+}
+
+a {
+  color: #0077cc;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* ===== Sidebar ===== */
 .sidebar {
-    position: fixed;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 240px;
-    background: #2c3e50;
-    color: #fff;
-    padding-top: 20px;
-    z-index: 1000;
-    transition: 0.3s;
+  width: 230px;
+  background: #222;
+  color: #fff;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  padding-top: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .sidebar a {
-    display: block;
-    color: #fff;
-    padding: 15px 25px;
-    font-size: 18px;
-    text-decoration: none;
+  color: #fff;
+  padding: 12px 0;
+  width: 100%;
+  text-align: center;
+  transition: 0.3s;
 }
 
 .sidebar a:hover {
-    background: #007bff;
+  background: #444;
 }
 
-/* =======================
-   Main Content
-======================= */
+/* ===== Main Content ===== */
 .main-content {
-    margin-left: 240px;
-    padding: 40px;
-    transition: 0.3s;
+  margin-left: 250px;
+  padding: 40px;
+  width: calc(100% - 250px);
 }
 
-/* =======================
-   Hero Section
-======================= */
+/* ===== Hero Section ===== */
 .hero {
-    min-height: 60vh;
-    color: #433f4a;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
+  background: linear-gradient(135deg, #0077cc, #5db1ff);
+  color: white;
+  padding: 80px 40px;
+  border-radius: 20px;
+  text-align: center;
+  margin-bottom: 50px;
 }
 
 .hero h1 {
-    font-size: 60px;
-    font-weight: bold;
+  font-size: 2.5em;
+  margin-bottom: 10px;
+}
+
+.hero .tagline {
+  font-size: 1.1em;
+  margin-bottom: 25px;
+}
+
+.hero-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
 }
 
 .btn-custom {
-    background: #007bff;
-    color: #fff;
-    transition: 0.3s;
+  background: #fff;
+  color: #0077cc;
+  padding: 10px 20px;
+  border-radius: 6px;
+  font-weight: 600;
+  transition: 0.3s;
 }
 
 .btn-custom:hover {
-    background: #0056b3;
+  background: #f0f0f0;
 }
 
-/* =======================
-   About Section
-======================= */
-#about {
-    background: linear-gradient(135deg, #f8f9fa, #e9f2ff);
-    border-radius: 12px;
-    padding: 40px;
-    margin-bottom: 50px;
-    text-align: center;
-    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.08);
+.btn-outline {
+  border: 2px solid #fff;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 6px;
+  font-weight: 600;
+  transition: 0.3s;
 }
 
-#about h2 {
-    color: #007bff;
-    margin-bottom: 15px;
-    font-size: 2rem;
+.btn-outline:hover {
+  background: #fff;
+  color: #0077cc;
 }
 
-#about-description {
-    font-size: 1.1rem;
-    line-height: 1.8;
-    color: #333;
-    max-width: 850px;
-    margin: 0 auto;
+/* ===== Section Headings ===== */
+.section h2 {
+  border-left: 5px solid #0077cc;
+  padding-left: 10px;
+  margin-bottom: 25px;
+  color: #0077cc;
 }
 
-/* =======================
-   Experience Section
-======================= */
-.experience-container {
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
+/* ===== About Section ===== */
+.about-card {
+  background: #fff;
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+  line-height: 1.7;
 }
 
-.experience-card {
-    display: flex;
-    flex-wrap: wrap;
-    background: #fff;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-    padding: 25px 30px;
-    transition: all 0.3s ease;
-}
-
-.experience-card:hover {
-    transform: translateY(-5px);
-}
-
-.experience-left {
-    flex: 1;
-    min-width: 250px;
-    border-right: 3px solid #007bff;
-    padding-right: 20px;
-}
-
-.experience-right {
-    flex: 2;
-    min-width: 300px;
-    padding-left: 25px;
-}
-
-.experience-left h4 {
-    font-size: 1.2rem;
-    margin-bottom: 5px;
-    color: #007bff;
-}
-
-.experience-left p {
-    margin: 0;
-    font-weight: 500;
-}
-
-.experience-left span {
-    font-size: 0.9rem;
-    color: #666;
-}
-
-.experience-highlights {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
-.experience-highlights li {
-    position: relative;
-    padding-left: 25px;
-    margin-bottom: 10px;
-    font-size: 0.95rem;
-    color: #333;
-}
-
-.experience-highlights li::before {
-    content: "•";
-    position: absolute;
-    left: 8px;
-    color: #007bff;
-}
-
-/* =======================
-   Qualification Section (Timeline)
-======================= */
-#qualification {
-    margin-bottom: 50px;
-}
-
-#qualification h2 {
-    text-align: center;
-    color: #007bff;
-    margin-bottom: 25px;
-}
-
-#qualification-list {
-    position: relative;
-    margin: 40px auto;
-    padding-left: 30px;
-    max-width: 800px;
-}
-
-#qualification-list::before {
-    content: '';
-    position: absolute;
-    left: 15px;
-    top: 0;
-    width: 3px;
-    height: 100%;
-    background: #007bff;
+/* ===== Qualification Timeline ===== */
+.timeline {
+  position: relative;
+  margin-left: 20px;
+  padding-left: 20px;
+  border-left: 3px solid #0077cc;
 }
 
 .timeline-item {
-    position: relative;
-    background: #fff;
-    border-radius: 10px;
-    padding: 20px 25px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-    margin-bottom: 25px;
-}
-
-.timeline-item::before {
-    content: '';
-    position: absolute;
-    top: 20px;
-    left: -10px;
-    width: 15px;
-    height: 15px;
-    background: #007bff;
-    border-radius: 50%;
-    box-shadow: 0 0 0 4px #e9f2ff;
+  margin-bottom: 30px;
 }
 
 .timeline-item h4 {
-    margin-bottom: 5px;
-    color: #007bff;
-    font-weight: bold;
+  margin-bottom: 5px;
+  color: #222;
 }
 
 .timeline-item p {
-    margin: 3px 0;
-    color: #333;
+  margin: 3px 0;
+  color: #555;
 }
 
 .timeline-item span {
-    color: #666;
-    font-style: italic;
+  font-size: 0.9em;
+  color: #777;
 }
 
-/* =======================
-   Honours / Awards / Scholarships
-======================= */
-#honours {
-    background: #fff;
-    padding: 40px;
-    border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-    margin-bottom: 40px;
+/* ===== Experience Section ===== */
+.experience-container {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
 }
 
-#honours h3 {
-    color: #007bff;
-    margin-bottom: 20px;
-    text-align: center;
+.experience-card {
+  display: grid;
+  grid-template-columns: 35% 65%;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+  padding: 20px;
+  align-items: start;
 }
 
-#honours-list {
-    list-style: none;
-    padding: 0;
-    max-width: 800px;
-    margin: 0 auto;
+.experience-left h4 {
+  color: #0077cc;
+  margin-bottom: 5px;
 }
 
-#honours-list li {
-    background: #f8faff;
-    border-left: 4px solid #007bff;
-    margin-bottom: 12px;
-    padding: 12px 16px;
-    border-radius: 6px;
-    font-size: 0.98rem;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+.experience-left p {
+  margin: 0;
+  color: #333;
 }
 
-/* =======================
-   Hobbies & Languages
-======================= */
-#hobbies-languages {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 40px;
-    background: #f9fbff;
-    padding: 40px;
-    border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+.experience-left span {
+  font-size: 0.9em;
+  color: #777;
 }
 
-.hobby-section, .language-section {
-    flex: 1 1 300px;
-    text-align: center;
+.experience-highlights {
+  list-style-type: disc;
+  padding-left: 20px;
+  margin: 0;
+  color: #444;
+  line-height: 1.6;
 }
 
-.hobby-section h3, .language-section h3 {
-    color: #007bff;
-    margin-bottom: 15px;
+/* ===== Honours / Awards / Scholarships ===== */
+#honours-list, #hobbies-list, #languages-list {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  gap: 8px;
 }
 
-#hobbies-list, #languages-list {
-    list-style: none;
-    padding: 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 10px;
+#honours-list li, #hobbies-list li, #languages-list li {
+  background: #fff;
+  padding: 12px 18px;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
 }
 
-#hobbies-list li, #languages-list li {
-    background: linear-gradient(135deg, #e3f2fd, #f8f9fa);
-    border: 1px solid #d0e7ff;
-    border-radius: 12px;
-    padding: 10px 18px;
-    font-weight: 500;
-    color: #004d61;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.05);
-    transition: transform 0.3s ease, background 0.3s ease;
+/* ===== Contact Section ===== */
+#contact-info p {
+  margin: 6px 0;
+  color: #333;
 }
 
-#hobbies-list li:hover, #languages-list li:hover {
-    background: linear-gradient(135deg, #d0e7ff, #e3f2fd);
-    transform: translateY(-3px);
-}
+/* ===== Responsive ===== */
+@media (max-width: 900px) {
+  .main-content {
+    margin-left: 0;
+    width: 100%;
+  }
 
-/* =======================
-   Responsive
-======================= */
-@media (max-width:768px) {
-    .sidebar {
-        width: 200px;
-        left: -200px;
-    }
-    .sidebar.active {
-        left: 0;
-    }
-    .main-content {
-        margin-left: 0;
-        padding: 20px;
-    }
-    .experience-card {
-        flex-direction: column;
-    }
-    .experience-left {
-        border-right: none;
-        border-bottom: 2px solid #007bff;
-        margin-bottom: 15px;
-        padding-right: 0;
-    }
-    .experience-right {
-        padding-left: 0;
-    }
-    #qualification-list {
-        padding-left: 20px;
-    }
-    #qualification-list::before {
-        left: 10px;
-    }
-    #hobbies-languages {
-        flex-direction: column;
-    }
+  .sidebar {
+    display: none;
+  }
+
+  .experience-card {
+    grid-template-columns: 1fr;
+  }
 }
