@@ -14,6 +14,9 @@ fetch('data.json')
       document.getElementById('contact').scrollIntoView({behavior: "smooth"});
     });
 
+    // Resume
+    document.getElementById('btn-resume').href = data.about.resume;
+
     // Contact
     document.getElementById('email').textContent = data.about.email;
     document.getElementById('phone').textContent = data.about.phone;
@@ -23,14 +26,20 @@ fetch('data.json')
     const expContainer = document.getElementById('experience-container');
     data.experience.milestones.forEach(exp => {
       const div = document.createElement('div');
-      div.innerHTML = `<h3>${exp.role} - ${exp.company}</h3><p>${exp.duration}</p>`;
-      const ul = document.createElement('ul');
-      exp.details.forEach(d => {
-        const li = document.createElement('li');
-        li.textContent = d;
-        ul.appendChild(li);
-      });
-      div.appendChild(ul);
+      div.className = 'card';
+      div.innerHTML = `<h3>${exp.role}</h3>
+                       <p>${exp.company}</p>
+                       <span>${exp.duration}</span>`;
+      if(exp.details){
+        const ul = document.createElement('ul');
+        ul.className = 'custom-list';
+        exp.details.forEach(d => {
+          const li = document.createElement('li');
+          li.textContent = d;
+          ul.appendChild(li);
+        });
+        div.appendChild(ul);
+      }
       expContainer.appendChild(div);
     });
 
@@ -38,6 +47,7 @@ fetch('data.json')
     const eduContainer = document.getElementById('education-container');
     data.education.forEach(edu => {
       const div = document.createElement('div');
+      div.className = 'card';
       div.innerHTML = `<h3>${edu.degree}</h3><p>${edu.university}</p><span>${edu.year}</span>`;
       eduContainer.appendChild(div);
     });
@@ -46,10 +56,11 @@ fetch('data.json')
     const skillsContainer = document.getElementById('skills-container');
     data.skills.forEach(skill => {
       const div = document.createElement('div');
+      div.className = 'card';
       div.innerHTML = `<h4>${skill.name}</h4>
                        <p>${skill.description}</p>
                        <div class="progress">
-                         <div style="width:${skill.progress}%; background-color:#007bff; color:#fff; padding:2px;">${skill.progress}%</div>
+                         <div style="width:${skill.progress}%; background-color:#007bff;">${skill.progress}%</div>
                        </div>`;
       skillsContainer.appendChild(div);
     });
@@ -58,9 +69,10 @@ fetch('data.json')
     const projectsContainer = document.getElementById('projects-container');
     data.projects.forEach(proj => {
       const div = document.createElement('div');
+      div.className = 'card';
       div.innerHTML = `<h4>${proj.title}</h4>
                        <p>${proj.description}</p>
-                       <p>Tech: ${proj.tech.join(', ')}</p>
+                       <p><strong>Tech:</strong> ${proj.tech.join(', ')}</p>
                        <a href="${proj.github}" target="_blank">GitHub</a>
                        ${proj.demo ? `<a href="${proj.demo}" target="_blank">Demo</a>` : ''}`;
       projectsContainer.appendChild(div);
