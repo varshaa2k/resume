@@ -1,16 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Varshaa SV</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Varshaa SV</title>
 
-    <!-- Bootstrap & Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<!-- Bootstrap & Font Awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="style.css">
+<!-- Custom CSS -->
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
 
@@ -27,6 +27,7 @@
     <a href="#qualification"><i class="fas fa-graduation-cap me-2"></i> Qualification</a>
     <a href="#skills"><i class="fas fa-chart-line"></i> Skills</a>
     <a href="#projects"><i class="fas fa-project-diagram"></i> Projects</a>
+    <a href="#honours"><i class="fas fa-award me-2"></i> Honours & Awards</a>
     <a href="#contact"><i class="fas fa-envelope"></i> Contact</a>
 </div>
 
@@ -51,7 +52,6 @@
                 <div class="col-12 col-md-6">
                     <h3>My Introduction</h3>
                     <p id="about-description"></p>
-                    <a href="#contact" class="btn btn-primary mt-3">Contact Me</a>
                 </div>
                 <div class="col-12 col-md-6 text-center">
                     <div class="row justify-content-center" id="about-stats"></div>
@@ -65,34 +65,61 @@
     <section id="experience" class="py-5 bg-light">
         <div class="container">
             <h2 class="text-center mb-4">Experience</h2>
-            <div id="experience-list" class="experience-container">
-                <!-- Populated by script.js -->
-            </div>
+            <div id="experience-list" class="experience-container"></div>
         </div>
     </section>
     <hr>
 
     <!-- Qualification Section -->
     <section id="qualification" class="py-5">
-        <h2 class="text-center">Qualification</h2>
-        <div class="timeline" id="qualification-list"></div>
+        <div class="container">
+            <h2 class="text-center mb-4">Qualification</h2>
+            <div class="row" id="qualification-list"></div>
+        </div>
     </section>
     <hr>
 
     <!-- Skills Section -->
-    <section id="skills" class="py-5">
+    <section id="skills" class="py-5 bg-light">
         <div class="container">
-            <h2 class="text-center">Skills</h2>
+            <h2 class="text-center mb-4">Skills</h2>
             <div class="row" id="skills-container"></div>
         </div>
     </section>
     <hr>
 
     <!-- Projects Section -->
-    <section id="projects" class="py-5 bg-light">
+    <section id="projects" class="py-5">
         <div class="container">
-            <h2 class="text-center">Projects</h2>
+            <h2 class="text-center mb-4">Projects</h2>
             <div class="row" id="projects-container"></div>
+        </div>
+    </section>
+    <hr>
+
+    <!-- Honours & Awards Section -->
+    <section id="honours" class="py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center mb-4">Honours, Awards & Scholarships</h2>
+            <ul id="honours-list" class="list-group list-group-flush"></ul>
+        </div>
+    </section>
+    <hr>
+
+    <!-- Hobbies & Languages Section -->
+    <section id="hobbies-languages" class="py-5">
+        <div class="container">
+            <h2 class="text-center mb-4">Hobbies & Languages</h2>
+            <div class="row text-center">
+                <div class="col-md-6 mb-3">
+                    <h5>Hobbies</h5>
+                    <ul id="hobbies-list" class="list-unstyled"></ul>
+                </div>
+                <div class="col-md-6 mb-3">
+                    <h5>Languages</h5>
+                    <ul id="languages-list" class="list-unstyled"></ul>
+                </div>
+            </div>
         </div>
     </section>
     <hr>
@@ -100,7 +127,7 @@
     <!-- Contact Section -->
     <section id="contact" class="py-5 bg-light">
         <div class="container">
-            <h2 class="text-center">Contact Me</h2>
+            <h2 class="text-center mb-4">Contact Me</h2>
             <div class="contact-details mb-4 text-center" id="contact-info"></div>
         </div>
     </section>
