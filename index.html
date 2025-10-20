@@ -1,100 +1,146 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Varshaa Portfolio</title>
-<link rel="stylesheet" href="style.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Varshaa Sv - Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
 
 <!-- Sidebar -->
 <nav id="sidebar">
-  <ul>
-    <li><a href="#home">Home</a></li>
-    <li><a href="#about">About</a></li>
-    <li><a href="#experience">Experience</a></li>
-    <li><a href="#education">Education</a></li>
-    <li><a href="#skills">Skills</a></li>
-    <li><a href="#projects">Projects</a></li>
-    <li><a href="#honours">Honours</a></li>
-    <li><a href="#hobbies">Hobbies</a></li>
-    <li><a href="#languages">Languages</a></li>
-    <li><a href="#contact">Contact</a></li>
-  </ul>
+    <div class="sidebar-header">
+        <h3>Varshaa Sv</h3>
+        <button id="sidebarToggle"><i class="fas fa-bars"></i></button>
+    </div>
+    <ul class="sidebar-nav">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#honours">Honours & Hobbies</a></li>
+        <li><a href="#contact">Contact</a></li>
+    </ul>
 </nav>
 
 <!-- Main Content -->
-<main id="main-content">
-  <!-- Hero Section -->
-  <section id="home" class="hero">
-    <h1>Welcome, I'm <span id="name"></span></h1>
-    <p id="tagline"></p>
-    <p id="roles"></p>
-    <button class="btn" onclick="scrollToContact()">Let's Connect</button>
-  </section>
+<div id="main-content">
 
-  <!-- About Section -->
-  <section id="about" class="section">
-    <h2>About Me</h2>
-    <p id="description_intro"></p>
-    <p id="description_details"></p>
-    <p id="cta"></p>
-    <a id="resumeBtn" href="" download class="btn">Download Resume</a>
-  </section>
+    <!-- Hero Section -->
+    <section id="home" class="hero-section">
+        <div class="hero-content">
+            <h1>Welcome, I'm Varshaa</h1>
+            <p class="tagline">💻 ☕️ 🧠 ❤️</p>
+            <p>25 | Software Engineer | Data Engineering, Management & Governance Senior Analyst | Full-Stack Engineer | AI</p>
+            <button onclick="scrollToSection('contact')" class="btn btn-hero">Let's Connect</button>
+        </div>
+    </section>
 
-  <!-- Experience Section -->
-  <section id="experience" class="section">
-    <h2>Experience</h2>
-    <div id="experience-container"></div>
-  </section>
+    <!-- About Section -->
+    <section id="about" class="section">
+        <div class="container">
+            <h2>About Me</h2>
+            <div class="about-flex">
+                <div class="about-text">
+                    <p><strong>Introduction:</strong> With <strong>3+ years</strong> of experience in AI and Software Engineering, I design, develop, and deploy cutting-edge software and AI solutions, specializing in MedTech and beyond.</p>
+                    <p>I’ve led cross-functional teams, translating business goals into actionable Data & AI strategies that deliver results. Skilled in Python, deep learning frameworks, Tableau, Power BI, Flask, MongoDB, LLMs and Generative AI. I build scalable, high-performance systems.</p>
+                    <p><strong>Looking for someone to drive impactful projects?</strong></p>
+                    <button onclick="scrollToSection('contact')" class="btn btn-primary">Contact Me</button>
+                    <p class="contact-info"><strong>Email:</strong> <a href="mailto:veeravarsha2k@gmail.com">veeravarsha2k@gmail.com</a> | <strong>Phone:</strong> <a href="tel:+919080469375">+91 9080469375</a> | <strong>Location:</strong> Chennai, India</p>
+                </div>
+                <div class="about-stats">
+                    <div class="stat-card">
+                        <h3>03+</h3>
+                        <p>Years XP</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3>03+</h3>
+                        <p>Projects Completed</p>
+                    </div>
+                    <div class="stat-card">
+                        <a href="resume.pdf" download class="btn btn-outline-success">
+                            <i class="fas fa-download"></i> Download Resume
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-  <!-- Education Section -->
-  <section id="education" class="section">
-    <h2>Education</h2>
-    <div id="education-container"></div>
-  </section>
+    <!-- Experience Section -->
+    <section id="experience" class="section">
+        <div class="container">
+            <h2>Experience</h2>
+            <div id="experience-container" class="timeline">
+                <!-- JS loads experience here -->
+            </div>
+        </div>
+    </section>
 
-  <!-- Skills Section -->
-  <section id="skills" class="section">
-    <h2>Skills</h2>
-    <div id="skills-container"></div>
-  </section>
+    <!-- Education Section -->
+    <section id="education" class="section">
+        <div class="container">
+            <h2>Education</h2>
+            <div id="education-container" class="timeline">
+                <!-- JS loads education here -->
+            </div>
+        </div>
+    </section>
 
-  <!-- Projects Section -->
-  <section id="projects" class="section">
-    <h2>Projects</h2>
-    <div id="projects-container"></div>
-  </section>
+    <!-- Skills Section -->
+    <section id="skills" class="section">
+        <div class="container">
+            <h2>Skills</h2>
+            <div id="skills-container" class="skills-grid">
+                <!-- JS loads skills here -->
+            </div>
+        </div>
+    </section>
 
-  <!-- Honours & Awards -->
-  <section id="honours" class="section">
-    <h2>Honours & Awards</h2>
-    <ul id="honours-container"></ul>
-  </section>
+    <!-- Projects Section -->
+    <section id="projects" class="section">
+        <div class="container">
+            <h2>Projects</h2>
+            <div id="projects-container" class="projects-grid">
+                <!-- JS loads projects here -->
+            </div>
+        </div>
+    </section>
 
-  <!-- Hobbies -->
-  <section id="hobbies" class="section">
-    <h2>Hobbies</h2>
-    <ul id="hobbies-container"></ul>
-  </section>
+    <!-- Honours & Hobbies Section -->
+    <section id="honours" class="section">
+        <div class="container">
+            <h2>Honours & Awards</h2>
+            <ul id="honours-list" class="list">
+                <!-- JS loads honours here -->
+            </ul>
+            <h2>Hobbies</h2>
+            <ul id="hobbies-list" class="list">
+                <!-- JS loads hobbies here -->
+            </ul>
+            <h2>Languages</h2>
+            <div id="languages-list" class="languages-list">
+                <!-- JS loads languages here -->
+            </div>
+        </div>
+    </section>
 
-  <!-- Languages -->
-  <section id="languages" class="section">
-    <h2>Languages</h2>
-    <ul id="languages-container"></ul>
-  </section>
+    <!-- Contact Section -->
+    <section id="contact" class="section contact-section">
+        <div class="container">
+            <h2>Contact Me</h2>
+            <p><strong>Email:</strong> <a href="mailto:veeravarsha2k@gmail.com">veeravarsha2k@gmail.com</a></p>
+            <p><strong>Phone:</strong> <a href="tel:+919080469375">+91 9080469375</a></p>
+            <p><strong>Location:</strong> Chennai, India</p>
+        </div>
+    </section>
 
-  <!-- Contact Section -->
-  <section id="contact" class="section">
-    <h2>Contact Me</h2>
-    <p>Email: <span id="email"></span></p>
-    <p>Phone: <span id="phone"></span></p>
-    <p>Location: <span id="location"></span></p>
-  </section>
-</main>
+</div>
 
-<script src="script.js"></script>
 </body>
 </html>
