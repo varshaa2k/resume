@@ -204,44 +204,41 @@ section h2::after {
   color: #555;
 }
 
-/* ===================== Honours, Hobbies, Languages ===================== */
-.tag-container {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 12px;
-  justify-content: center;
-  margin-bottom: 40px;
-}
-
-.tag {
-  background-color: #3498db;
-  color: #fff;
-  padding: 8px 16px;
-  border-radius: 20px;
-  font-size: 0.95rem;
-  font-weight: 500;
-  text-align: center;
-  transition: background 0.3s, transform 0.2s;
-  cursor: default;
-}
-.tag:hover {
-  background-color: #2980b9;
-  transform: translateY(-2px);
-}
-
-/* Honours & Hobbies list - convert to tags */
-#honours-list, #hobbies-list {
+/* ===================== Honours - Vertical Tags ===================== */
+#honours-list {
   list-style: none;
   padding: 0;
-  margin: 0;
+  margin: 0 auto 40px auto;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  max-width: 400px;
+}
+#honours-list li {
+  background-color: #3498db;
+  color: #fff;
+  padding: 10px 16px;
+  border-radius: 20px;
+  font-size: 0.95rem;
+  font-weight: 500;
+  transition: background 0.3s, transform 0.2s;
+}
+#honours-list li:hover {
+  background-color: #2980b9;
+  transform: translateY(-2px);
+}
+
+/* ===================== Hobbies - Horizontal Tags ===================== */
+#hobbies-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 auto 40px auto;
   display: flex;
   flex-wrap: wrap;
   gap: 12px;
   justify-content: center;
 }
-
-#honours-list li, #hobbies-list li {
-  display: inline-block;
+#hobbies-list li {
   background-color: #3498db;
   color: #fff;
   padding: 8px 16px;
@@ -250,12 +247,12 @@ section h2::after {
   font-weight: 500;
   transition: background 0.3s, transform 0.2s;
 }
-#honours-list li:hover, #hobbies-list li:hover {
+#hobbies-list li:hover {
   background-color: #2980b9;
   transform: translateY(-2px);
 }
 
-/* Languages - tags */
+/* ===================== Languages - Horizontal Tags ===================== */
 #languages-list {
   display: flex;
   flex-wrap: wrap;
@@ -310,7 +307,7 @@ section h2::after {
   .hero .tagline { font-size: 1.1rem; }
   .hero .roles { font-size: 0.95rem; }
   #lets-connect, .btn-resume { width: 90%; padding: 12px 0; margin: 8px 0; }
-  .tag, #honours-list li, #hobbies-list li, #languages-list div {
+  #honours-list li, #hobbies-list li, #languages-list div {
     font-size: 0.9rem;
     padding: 6px 12px;
   }
