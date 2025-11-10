@@ -14,8 +14,6 @@ fetch('data.json')
       document.getElementById('contact').scrollIntoView({behavior: "smooth"});
     });
 
-    // Resume
-    document.getElementById('btn-resume').href = data.about.resume;
 
     // Contact
     document.getElementById('email').textContent = data.about.email;
